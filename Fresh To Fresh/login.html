@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<script>
+		window.AESKey = '';
+		// 判断浏览器是否支持placeholder属性
+		function isSupportPlaceholder() {
+			var input = document.createElement('input');
+			return 'placeholder' in input;
+		};
+		(function() {
+			//判断是否是IE浏览器，包括Edge浏览器
+			function IEVersion() {
+				//取得浏览器的userAgent字符串
+				var userAgent = navigator.userAgent;
+				//判断是否IE浏览器
+				var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+				if(isIE) {
+					var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+					reIE.test(userAgent);
+					var fIEVersion = parseFloat(RegExp["$1"]);
+					if(fIEVersion < 11 || !isSupportPlaceholder()) {
+						return true;
+					}
+				} else {
+					return false;
+				}
+			}
+
+			var tpl = ['<img style="border:none;outline:0;display:block;width:450px;height:140px;position:absolute;top:50%;left:50%;margin-left:-225px;margin-top:-70px" src="images/common/error/error.png">'].join('');
+
+			window.onload = function() {
+				if(IEVersion()) {
+					document.write(tpl);
+				}
+			};
+			window.siteName = "温馨提示";
+		})();
+	</script>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>鲜来鲜往 - 登录</title>
+		<meta name="keywords" content="keywords">
+		<meta name="description" content="description">
+		<!--引入网站公共图标文件，默认为绿色-->
+		<link rel="shortcut icon" href="images/common/favicon/green.ico" />
+		<!--引入网站公共样式文件，默认为MDUI.CSS-->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<!--引入当前页面特有样式-->
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+	</head>
+
+	<body class="mdui-theme-accent-green">
+		<!--头部logo样式开始-->
+		<div class="xlxw-login-container-title">
+			<a href="index.html"><i></i></a>
+		</div>
+		<!--头部logo样式结束-->
+
+		<!--中间登录样式开始-->
+		<div class="xlxw-login-container-body-fluid">
+			<form action="index.html" method="post">
+				<div class="xlxw-login-container-body"> <i></i>
+					<div class="login-group">
+						<!--登录标题-->
+						<h1>欢迎登录</h1>
+						<!--分隔符-->
+						<div class="xlxw-divider-light-white"></div>
+						<!--账号输入框-->
+						<div class="login-input"> <i class="mdui-icon material-icons">&#xe7fd;</i>
+							<input type="text" placeholder="邮箱 / 用户名 / 手机号" />
+						</div>
+						<!--密码输入框-->
+						<div class="login-input"> <i class="mdui-icon material-icons">&#xe88d;</i>
+							<input type="password" placeholder="密码" />
+						</div>
+						<!--保存密码-->
+						<div class="passport-group">
+							<!--保存密码-->
+							<label class="mdui-checkbox ">
+								<input type="checkbox" />
+								<i class="mdui-checkbox-icon"></i> 保存密码 </label>
+							<!--忘记密码-->
+							<a href="">忘记密码</a>
+						</div>
+						<!--登录按钮-->
+						<button>登 录</button>
+						<!--立即注册-->
+						<a href="register.html">立即注册</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!--中间登录样式结束-->
+
+		<!--链接导航栏开始-->
+		<ul class="xlxw-login-container-link">
+			<li>
+				<a href="search-fruits.html">时令鲜果</a>
+			</li>
+			<li>
+				<a href="search-vegetables.html">新鲜蔬菜</a>
+			</li>
+			<li>
+				<a href="search-meat.html">肉禽单品</a>
+			</li>
+			<li>
+				<a href="search-seafood.html">海鲜水产</a>
+			</li>
+			<li>
+				<a href="search-oil.html">柴米油盐</a>
+			</li>
+			<li>
+				<a href="login.html">鲜来资讯</a>
+			</li>
+			<li>
+				<a href="ftf-express.html">鲜来快递</a>
+			</li>
+			<li>
+				<a href="login.html">商家入驻</a>
+			</li>
+			<li>
+				<a href="login.html">广告服务</a>
+			</li>
+			<li>
+				<a href="login.html">客服中心</a>
+			</li>
+			<li>
+				<a href="login.html">侵权投诉</a>
+			</li>
+			<li>
+				<a href="login.html">人才招聘</a>
+			</li>
+			<li>
+				<a href="login.html">关于我们</a>
+			</li>
+		</ul>
+		<!--链接导航栏结束-->
+
+		<!--版权所有开始-->
+		<p class="xlxw-login-container-copyright"> Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2017-2018 Fresh To Fresh-Inc.All Rights Reserved </p>
+		<!--版权所有结束-->
+	</body>
+
+	<!--引入JQuery文件-->
+	<script src="scripts/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--引入MDUI.JQ文件-->
+	<script src="scripts/common.js" type="text/javascript" charset="utf-8"></script>
+	<!--初始化所有组件-->
+	<script type="text/javascript">
+		mdui.mutation();
+	</script>
+
+</html>

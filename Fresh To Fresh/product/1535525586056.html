@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<script>
+		window.AESKey = '';
+		// 判断浏览器是否支持placeholder属性
+		function isSupportPlaceholder() {
+			var input = document.createElement('input');
+			return 'placeholder' in input;
+		};
+		(function() {
+			//判断是否是IE浏览器，包括Edge浏览器
+			function IEVersion() {
+				//取得浏览器的userAgent字符串
+				var userAgent = navigator.userAgent;
+				//判断是否IE浏览器
+				var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+				if(isIE) {
+					var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+					reIE.test(userAgent);
+					var fIEVersion = parseFloat(RegExp["$1"]);
+					if(fIEVersion < 11 || !isSupportPlaceholder()) {
+						return true;
+					}
+				} else {
+					return false;
+				}
+			}
+
+			var tpl = ['<img style="border:none;outline:0;display:block;width:450px;height:140px;position:absolute;top:50%;left:50%;margin-left:-225px;margin-top:-70px" src="../images/common/error/error.png">'].join('');
+
+			window.onload = function() {
+				if(IEVersion()) {
+					document.write(tpl);
+				}
+			};
+			window.siteName = "温馨提示";
+		})();
+	</script>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>天地粮人 有机 黑豆 330g（无添加 无染色 可打豆浆 东北 五谷 杂粮 粗粮 真空装 大米伴侣）</title>
+		<meta name="keywords" content="keywords">
+		<meta name="description" content="description">
+		<!--引入网站公共图标文件，默认为绿色-->
+		<link rel="shortcut icon" href="../images/common/favicon/green.ico" />
+		<!--引入网站公共样式文件，默认为MDUI.CSS-->
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		<!--引入当前页面特有样式-->
+		<link rel="stylesheet" type="text/css" href="../css/commodity-details.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/footer.css" />
+	</head>
+
+	<body>
+		<!--网页头部导航条开始-->
+		<div class="mdui-container-fluid xlxw-header">
+			<div class="mdui-container">
+				<div class="xlxw-header-left">
+					<i class="mdui-icon material-icons">&#xe8b4;</i>
+					<span class="xlxw-header-areatext" id="xlxw_header_areatext">北京</span>
+					<ul class="xlxw-header-areatext-ul" id="xlxw_header_areatext_ul">
+						<!--4个直辖市开始-->
+						<li>北京</li>
+						<li>上海</li>
+						<li>天津</li>
+						<li>重庆</li>
+						<!--4个直辖市结束-->
+						<!--23个省开始-->
+						<li>河北</li>
+						<li>山东</li>
+						<li>辽宁</li>
+						<li>黑龙江</li>
+						<li>吉林</li>
+						<li>甘肃</li>
+						<li>青海</li>
+						<li>河南</li>
+						<li>江苏</li>
+						<li>湖北</li>
+						<li>湖南</li>
+						<li>江西</li>
+						<li>浙江</li>
+						<li>广东</li>
+						<li>云南</li>
+						<li>福建</li>
+						<li>台湾</li>
+						<li>海南</li>
+						<li>山西</li>
+						<li>四川</li>
+						<li>陕西</li>
+						<li>贵州</li>
+						<li>安徽</li>
+						<!--23个省结束-->
+					</ul>
+				</div>
+				<div class="xlxw-headerbar-right">
+					<ul>
+						<li>
+							<a href="../login.html"><span class="xlxw-fruits-color">您好，请登录</span></a>
+						</li>
+						<li>
+							<a href="../register.html">免费注册</a>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li>
+							<a href="../collection.html">我的收藏</a>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li>
+							<a href="../footprint.html">我的足迹</a>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-buyer">
+							<a href="../login.html">我是采购商<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-buyer-ul">
+								<li>
+									<a href="../login.html">我的优惠</a>
+								</li>
+								<li>
+									<a href="../login.html">发布需求</a>
+								</li>
+								<li>
+									<a href="../login.html">采购订单</a>
+								</li>
+								<li>
+									<a href="../login.html">采购计划</a>
+								</li>
+								<li>
+									<a href="../login.html">查询均价</a>
+								</li>
+							</ul>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-seller">
+							<a href="../login.html">我是供应商<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-seller-ul">
+								<li>
+									<a href="../login.html">我的店铺</a>
+								</li>
+								<li>
+									<a href="../login.html">需求中心</a>
+								</li>
+								<li>
+									<a href="../login.html">免费开店</a>
+								</li>
+								<li>
+									<a href="../login.html">店铺装修</a>
+								</li>
+								<li>
+									<a href="../login.html">市场动态</a>
+								</li>
+							</ul>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-service">
+							<a href="../login.html">服务中心<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-service-ul">
+								<li>
+									<a href="../login.html">买家服务</a>
+								</li>
+								<li>
+									<a href="../login.html">卖家服务</a>
+								</li>
+								<li>
+									<a href="../login.html">打假举报</a>
+								</li>
+								<li>
+									<a href="../login.html">侵权投诉</a>
+								</li>
+							</ul>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-webnav">
+							<a href="../">网站导航<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-webnav-ul">
+								<li><span class="xlxw-fruits-color">时令水果</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="../search-fruits.html">苹果</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">香蕉</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">桔子</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">草莓</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">火龙果</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">柠檬</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">橙子</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">西瓜</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">油桃</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">蓝莓</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">猕猴桃</a>
+										</li>
+										<li>
+											<a href="../search-fruits.html">荔枝</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-vegetables-color">新鲜蔬菜</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="../search-vegetables.html">生菜</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">西兰花</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">菠菜</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">荠菜</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">香菇</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">芹菜</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">韭菜</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">茼蒿</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">香菜</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">芦笋</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">胡萝卜</a>
+										</li>
+										<li>
+											<a href="../search-vegetables.html">尖椒</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-meat-color">肉禽蛋品</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="../search-meat.html">猪肉</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">五花肉</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">牛肉</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">鸡肉</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">鸭肉</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">羊肉卷</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">羊肉</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">里脊</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">排骨</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">羊排</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">羊腿</a>
+										</li>
+										<li>
+											<a href="../search-meat.html">火鸡</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-seafood-color">海鲜水产</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="../search-seafood.html">带鱼</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">三文鱼</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">甲鱼</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">鲈鱼</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">红虾</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">黄鱼</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">大闸蟹</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">生蚝</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">皮皮虾</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">金枪鱼</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">甲鱼</a>
+										</li>
+										<li>
+											<a href="../search-seafood.html">荔枝</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-oil-color">柴米油盐</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="../search-oil.html">苹果</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">香蕉</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">桔子</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">草莓</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">火龙果</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">柠檬</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">橙子</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">西瓜</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">油桃</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">蓝莓</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">猕猴桃</a>
+										</li>
+										<li>
+											<a href="../search-oil.html">荔枝</a>
+										</li>
+									</ul>
+								</li>
+								<li class="xlxw-headerbar-webnav-ul-last">鲜来快递
+									<ul class="xlxw-headerbar-webnav-ul-express">
+										<li>
+											<a href="../ftf-express.html">快递服务</a>
+											<a href="../ftf-express.html">速运服务</a>
+											<a href="../ftf-express.html">冷运服务</a>
+											<a href="../ftf-express.html">仓储服务</a>
+											<a href="../ftf-express.html">资费查询</a>
+											<a href="../ftf-express.html">货物查询</a>
+										</li>
+									</ul>
+								</li>
+								<li class="xlxw-headerbar-webnav-ul-last">鲜来公益
+									<ul class="xlxw-headerbar-webnav-ul-public-welfare">
+										<li>
+											<a href="../ftf-love.html">申请帮助</a>
+											<a href="../ftf-love.html">鲜来众筹</a>
+											<a href="../ftf-love.html">滞留代销</a>
+											<a href="../ftf-love.html">清仓清场</a>
+											<a href="../ftf-love.html">公益历史</a>
+											<a href="../ftf-love.html">公益足迹</a>
+										</li>
+									</ul>
+								</li>
+								<li class="xlxw-headerbar-webnav-ul-last">扫码打开手机版
+									<ul class="xlxw-headerbar-webnav-ul-mobile-phone-edition">
+										<li>
+											<img src="../images/index/header/mpe.png" width="79%" height="79%" />
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--网页头部导航条结束-->
+		<!--网页头部搜索栏开始-->
+		<div class="mdui-container-fluid xlxw-search" id="xlxw-search">
+			<div class="mdui-container">
+				<div class="mdui-row">
+					<div class="mdui-col-sm-4  xlxw-search-left">
+						<h1><a href="../index.html">鲜来鲜往</a></h1>
+					</div>
+					<div class="mdui-col-sm-8  xlxw-search-right">
+						<div class="xlxw-search-group">
+							<div class="xlxw-search-group-select" id="xlxw-search-group-select">
+								<span id="xlxw_search_group_select_ul_text">商品名<i class="mdui-icon material-icons">&#xe5cf;</i></span>
+								<ul class="xlxw-search-group-select-ul" id="xlxw_search_group_select_ul">
+									<li>商品名</li>
+									<li>店铺名</li>
+								</ul>
+							</div>
+							<input type="text" placeholder="请输入要搜索的关键字" />
+							<button>搜索商品</button>
+						</div>
+						<div class="xlxw-search-shopping-cart">
+							<span></span>
+							<a href="../order.html">购物车</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--网页头部搜索栏结束-->
+
+		<!--请在这里写代码开始...-->
+		<div class="mdui-container-fluid xlxw-body">
+			<div class="mdui-container">
+				<!--banner开始-->
+				<div class="xlxw-banner"><img name="banner" src="../images/commodity-details/banner1.png" /></div>
+				<!--banner结束-->
+				<!--店铺导航栏开始-->
+				<div class="xlxw-body-navigation">
+					<ul>
+						<a href="../commodity-shops.html">
+							<li>商铺首页</li>
+						</a>
+						<a href="../#">
+							<li>商铺信息</li>
+						</a>
+						<a href="../#">
+							<li>供应产品</li>
+						</a>
+						<a href="../#">
+							<li>联系方式</li>
+						</a>
+						<a href="../#">
+							<li>微商代理</li>
+						</a>
+						<a href="../#">
+							<li>代理加盟</li>
+						</a>
+					</ul>
+				</div>
+				<!--店铺导航栏结束-->
+				<!--详情开始-->
+				<div class="xlxw-details">
+					<!--放大镜开始-->
+					<div id="wrap">
+						<div class="pic">
+							<div class="pic_cover">
+								<img name="big-img" src="../images/product/oil/34/1535462510409.jpg" width=400 height=400 />
+								<div class="cover"></div>
+								<div class="show"></div>
+							</div>
+						</div>
+						<div class="tab">
+							<ul>
+								<li class="on"><img name="small-img-1" src="../images/product/oil/34/1535462512090.jpg" /></li>
+								<li><img name="small-img-2" src="../images/product/oil/34/1535462512185.jpg" /></li>
+								<li><img name="small-img-3" src="../images/product/oil/34/1535462512286.jpg" /></li>
+								<li><img name="small-img-4" src="../images/product/oil/34/1535462512386.jpg" /></li>
+								<li style="margin-right: 0px;"><img name="small-img-5" src="../images/product/oil/34/1535462512478.jpg" /></li>
+							</ul>
+						</div>
+					</div>
+					<script type="text/javascript" src="../scripts/jquery-1.12.4.min.js"></script>
+					<script src="../scripts/product.js" type="text/javascript" charset="utf-8"></script>
+					<!--放大镜结束-->
+					<!--下单选项卡开始-->
+					<div class="xlxw-details-option">
+						<a name="Commodity-name">天地粮人 有机 黑豆 330g（无添加 无染色 可打豆浆 东北 五谷 杂粮 粗粮 真空装 大米伴侣）</a>
+						<ul class="choice">
+							<li>
+								<ul class="xlxw-details-option-1">
+									<div class="xlxw-details-option-1-money">
+										<div style="height: 50px;line-height: 60px;"><span class="xlxw-details-option-1-information-1">价格</span><span name="Price" style="color:#4ab344;font-family: 'Tahoma'; font-size: 30px;font-weight: 700;">￥22.89</span></div>
+										<div style="height: 50px;line-height: 60px;"><span class="xlxw-details-option-1-information-1">起批量</span><span class="xlxw-details-option-1-information-2">≥<a name="Wholesale-volume"> 50</a> 箱</span></div>
+										<div class="xlxw-details-option-1-distributor">查看货源视频&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="12px" height="12px" src="../images/commodity-details/arrow-right.png" /></div>
+									</div>
+									<div class="xlxw-details-option-1-information">
+										<div style="height: 40px;line-height: 40px;"><span class="xlxw-details-option-1-information-1">经营模式</span><span class="xlxw-details-option-1-information-2">个人</span></div>
+										<div style="height: 40px;line-height: 40px;"><span class="xlxw-details-option-1-information-1">物流</span><span name="local" class="xlxw-details-option-1-information-2">山东&nbsp;&nbsp;至&nbsp;&nbsp;<a>&nbsp;&nbsp;请选择&nbsp;&nbsp;</a></span></div>
+										<div style="height: 40px;line-height: 40px;"><span class="xlxw-details-option-1-information-1">成交\评价</span><span class="xlxw-details-option-1-information-3">
+										<img width="15px" height="15px" src="../images/commodity-details/评价1.png"/>
+										<img width="15px" height="15px" src="../images/commodity-details/评价1.png"/>
+										<img width="15px" height="15px" src="../images/commodity-details/评价1.png"/>
+										<img width="15px" height="15px" src="../images/commodity-details/评价1.png"/>
+										<img width="15px" height="15px" src="../images/commodity-details/评价1.png"/>
+									</span>
+											<span class="xlxw-details-option-1-information-4">30天内</span><span class="xlxw-details-option-1-information-5"><span name="number" style="color: #4AB344;">1000箱</span>成交</span>
+											<span class="xlxw-details-option-1-information-6"><span name="evaluate" style="color: #4AB344;">331</span>条评价</span>
+										</div>
+									</div>
+									<div class="xlxw-details-option-1-Purchase">
+										<div class="xlxw-details-option-1-Purchase-quantity">
+											<span class="xlxw-details-option-1-information-1">采购量</span>
+											<!--累加开始-->
+											<div style="margin-left: 150px; margin-top: 20px;">
+												<input class="sdddq" id="inp" />
+												<script src="../scripts/commodity-details.js"></script>
+												<span class="xlxw-details-option-1-information-7">（9901箱可售）</span>
+											</div>
+											<!--累加结束-->
+											<div class="xlxw-details-option-1-Purchase-button">
+												<a href="../commodity-settlement.html"><button class="xlxw-details-option-1-Purchase-button-left">立即订购</button></a>
+												<button class="xlxw-details-option-1-Purchase-button-right">加入进货单</button>
+											</div>
+										</div>
+									</div>
+									<div class="xlxw-details-option-1-guarantee">
+										<span class="xlxw-details-option-1-information-1">买家服务</span>
+										<div class="xlxw-details-option-1-guarantee-1">
+											<img src="../images/commodity-details/01运输中、物流-线性.png" />
+											<a>运费险</a>
+											<img src="../images/commodity-details/02包裹、发货-线性.png" />
+											<a>交期保障</a>
+											<img src="../images/commodity-details/业务图标—赔.png" />
+											<a>买家保障</a>
+										</div>
+										<span class="xlxw-details-option-1-guarantee-21">支付方式</span>
+										<div class="xlxw-details-option-1-guarantee-2">
+											<img src="../images/commodity-details/支付宝.png" />
+											<a>支付宝</a>
+											<img src="../images/commodity-details/银行卡.png" />
+											<a>网上银行</a>
+											<img src="../images/commodity-details/交易.png" />
+											<a>线下交易</a>
+										</div>
+									</div>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<!--下单选项卡结束-->
+				</div>
+				<!--详情结束-->
+
+				<!--产品介绍与评价开始-->
+				<div class="xlxw-evaluate">
+					<div class="xlxw-evaluate-left">
+						<div class="xlxw-evaluate-left-title">
+							<h4>猜你喜欢</h4>
+						</div>
+						<div class="xlxw-evaluate-left-commodity">
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢1.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>新疆阿克苏苹果4.5kg原箱果径80mm以上</strong></div>
+								<span>￥71.80</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+							<hr/>
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢2.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>山东栖霞优质红富士8个200g以上/个</strong></div>
+								<span>￥25.00</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+							<hr/>
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢3.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>山东蓬莱精品红富士4个200g以上/个</strong></div>
+								<span>￥17.50</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+							<hr/>
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢4.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>山东栖霞优质红富士12个200g以上/个</strong></div>
+								<span>￥36.90</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+							<hr/>
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢5.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>新疆库尔勒精选香梨3kg120g以上/个</strong></div>
+								<span>￥45.80</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+							<hr/>
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢6.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>Driscolls云南蓝莓2盒(125g以上/盒)</strong></div>
+								<span>￥39.00</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+							<hr/>
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢7.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>进口凤梨2个1kg以上/个</strong></div>
+								<span>￥49.90</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+							<hr/>
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢8.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>泰国龙眼1kg</strong></div>
+								<span>￥24.80</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+							<hr/>
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢9.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>新奇士美国柠檬4个85g以上/个</strong></div>
+								<span>￥19.90</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+							<hr/>
+							<div class="xlxw-evaluate-left-commodity-img">
+								<img src="../images/commodity-details/猜你喜欢10.jpg" />
+								<div class="xlxw-evaluate-left-commodity-text"><strong>海南金香玉蜜瓜1个1kg以上/个</strong></div>
+								<span>￥25.90</span>
+								<div class="xlxw-evaluate-left-commodity-button">加入购物车</div>
+							</div>
+						</div>
+					</div>
+					<div class="xlxw-evaluate-right">
+						<div class="xlxw-evaluate-right-button">
+							<button id="button1">商品详情</button>
+							<button id="button2">商品评价</button>
+						</div>
+						<div name="commodity-img-1" style="background-image: url(../images/product/introduce/oil.jpg);" class="xlxw-evaluate-right-box1" id="button_div1">
+
+						</div>
+						<div class="xlxw-evaluate-right-box2" id="button_div2">
+							<div class="xlxw-evaluate-right-box2-card">
+								<div class="xlxw-evaluate-right-box2-card-left">
+									<div>总体满意度</div>
+									<div><span>5.0</span>分</div>
+									<div>(共有<span name="evaluate">331</span>人评论)</div>
+								</div>
+								<div class="xlxw-evaluate-right-box2-card-center">
+									<ul>
+										<li>
+											<b>好评</b>
+											<span style="width: 47%;"></span>
+											<i>47%</i>
+										</li>
+										<li>
+											<b>中评</b>
+											<span style="width: 53%;"></span>
+											<i>53%</i>
+										</li>
+										<li>
+											<b>差评</b>
+											<span style="width: 0%;"></span>
+											<i>0%</i>
+										</li>
+									</ul>
+								</div>
+								<div class="xlxw-evaluate-right-box2-card-right">
+									<p>前5位评论用户可获得鲜来公益积分</p>
+									<div>我要评论</div>
+									<p>只有购买过该商品的用户才能评论</p>
+								</div>
+							</div>
+							<div class="xlxw-evaluate-right-box2-text">
+								<ul>
+									<li name="evaluate" style="border-bottom: solid 2px green;">全部评论（331）</li>
+									<li>好评<span name="Praise">（154）</span></li>
+									<li><span name="Review">中评（176）</span></li>
+									<li><span name="Negative-comment">差评（1）</span></li>
+									<li><span name="img-comment">图评（23）</span></li>
+								</ul>
+								<div class="xlxw-evaluate-right-box2-text-card">
+									<div class="xlxw-evaluate-right-box2-text-card-left">
+										<div>
+											<img name="shangpingjieshao1" src="../images/commodity-details/0-1.png" />
+											<p name="Net-name-1">微爱</p>
+										</div>
+									</div>
+									<div class="xlxw-evaluate-right-box2-text-card-right">
+										<div class="xlxw-evaluate-right-box2-text-card-right-title">
+											<div style="width: 120px; height: 30px; float: left;">
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<span>5分</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>商品质量：</span>
+												<span>好</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>物流服务：</span>
+												<span>好</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>服务质量：</span>
+												<span>好</span>
+											</div>
+											<span>2018年06月26日</span>
+											<span style="margin-left: 20px;">09:26</span>
+										</div>
+										<div name="text" class="xlxw-evaluate-right-box2-text-card-right-body">
+											哈密瓜非常好，果肉很多，超级喜欢
+										</div>
+									</div>
+								</div>
+								<div class="xlxw-evaluate-right-box2-text-card">
+									<div class="xlxw-evaluate-right-box2-text-card-left">
+										<div>
+											<img name="shangpingjieshao2" src="../images/commodity-details/0-1.png" />
+											<p name="Net-name-1">满船清梦压星河</p>
+										</div>
+									</div>
+									<div class="xlxw-evaluate-right-box2-text-card-right">
+										<div class="xlxw-evaluate-right-box2-text-card-right-title">
+											<div style="width: 120px; height: 30px; float: left;">
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<span>5分</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>商品质量：</span>
+												<span>好</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>物流服务：</span>
+												<span>好</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>服务质量：</span>
+												<span>好</span>
+											</div>
+											<span>2018年06月26日</span>
+											<span style="margin-left: 20px;">12:50</span>
+										</div>
+										<div name="text" class="xlxw-evaluate-right-box2-text-card-right-body">
+											对商品非常满意哦
+										</div>
+									</div>
+
+								</div>
+
+								<div class="xlxw-evaluate-right-box2-text-card">
+									<div class="xlxw-evaluate-right-box2-text-card-left">
+										<div>
+											<img name="shangpingjieshao3" src="../images/commodity-details/0-1.png" />
+											<p name="Net-name-1">病亡</p>
+										</div>
+									</div>
+									<div class="xlxw-evaluate-right-box2-text-card-right">
+										<div class="xlxw-evaluate-right-box2-text-card-right-title">
+											<div style="width: 120px; height: 30px; float: left;">
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<span>5分</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>商品质量：</span>
+												<span>好</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>物流服务：</span>
+												<span>好</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>服务质量：</span>
+												<span>好</span>
+											</div>
+											<span>2018年06月26日</span>
+											<span style="margin-left: 20px;">13:50</span>
+										</div>
+										<div name="text" class="xlxw-evaluate-right-box2-text-card-right-body">
+											十分满意，包装很好，水果很新鲜
+										</div>
+									</div>
+
+								</div>
+
+								<div class="xlxw-evaluate-right-box2-text-card">
+									<div class="xlxw-evaluate-right-box2-text-card-left">
+										<div>
+											<img name="shangpingjieshao4" src="../images/commodity-details/0-2.png" />
+											<p name="Net-name-1">挽歌</p>
+										</div>
+									</div>
+									<div class="xlxw-evaluate-right-box2-text-card-right">
+										<div class="xlxw-evaluate-right-box2-text-card-right-title">
+											<div style="width: 120px; height: 30px; float: left;">
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<img src="../images/commodity-details/评价1.png" />
+												<span>5分</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>商品质量：</span>
+												<span>好</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>物流服务：</span>
+												<span>好</span>
+											</div>
+											<div style="width: 120px; height: 30px; float: left;">
+												<span>服务质量：</span>
+												<span>好</span>
+											</div>
+											<span>2018年06月26日</span>
+											<span style="margin-left: 20px;">16:00</span>
+										</div>
+										<div name="text" class="xlxw-evaluate-right-box2-text-card-right-body">
+											很不错，有两个，但当天都不能吃，要等两天，两个都很甜
+										</div>
+									</div>
+
+									<ul class="pagination">
+										<li>上一页</li>
+										<li style="border: solid 1px #008842;">1</li>
+										<li>2</li>
+										<li>3</li>
+										<li>...</li>
+										<li>23</li>
+										<li>下一页</li>
+									</ul>
+								</div>
+
+							</div>
+
+						</div>
+						<script>
+							//获取两个按钮的ID
+							var btn1 = document.getElementById("button1");
+							var btn2 = document.getElementById("button2");
+							//获取两个Div盒子的ID
+							var btnDiv1 = document.getElementById("button_div1");
+							var btnDiv2 = document.getElementById("button_div2");
+
+							//点击第一个按钮，让第一个div显示，让第二个div隐藏（实际上，只是动态的给div添加了一些样式）
+							btn1.onclick = function() {
+								btnDiv1.style.display = "block";
+								btnDiv2.style.display = "none";
+								btn1.style.background = "white";
+								btn1.style.color = "black";
+								btn2.style.background = "#94c966";
+								btn2.style.color = "white";
+							}
+
+							//点击第一个按钮，让第一个div隐藏，让第二个div显示（实际上，只是动态的给div添加了一些样式）
+							btn2.onclick = function() {
+								btnDiv1.style.display = "none";
+								btnDiv2.style.display = "block";
+								btn2.style.background = "white";
+								btn2.style.color = "black";
+								btn1.style.background = "#94c966";
+								btn1.style.color = "white";
+							}
+						</script>
+
+					</div>
+
+				</div>
+			</div>
+			<!--产品介绍与评价结束-->
+			<!--返回顶部开始-->
+			<div id="to_top" title="返回顶部" class="rocket">
+				<img src="../images/commodity-details/返回顶部.png" width="50px" height="50px" />
+			</div>
+			<script>
+				window.onscroll = function() {
+
+					var distance = document.documentElement.scrollTop || document.body.scrollTop; //距离页面顶部的距离
+
+					if(distance >= 300) { //当距离顶部超过300px时，显示图片
+						document.getElementById('to_top').style.display = "";
+					} else { //距离顶部小于300px，隐藏图片
+						document.getElementById('to_top').style.display = "none";
+					}
+
+					var toTop = document.getElementById("to_top"); //获取图片所在的div
+
+					toTop.onclick = function() { //点击图片时触发的点击事件
+						document.documentElement.scrollTop = document.body.scrollTop = 0; //页面移动到顶部
+					}
+				}
+			</script>
+
+		</div>
+
+		<!--请在这里写代码结束...-->
+
+		<!--网页底部信息开始-->
+		<div class="mdui-container-fluid xlxw-footer">
+			<div class="mdui-container">
+				<!--底部图标导航栏开始-->
+				<ul class="xlxw-footer-icons">
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item1"></i>
+							<h3>食品安全</h3>
+							<p>精选生鲜 严格质检</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item2"></i>
+							<h3>全程冷链</h3>
+							<p>自营物流 安全可控</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item3"></i>
+							<h3>源头直采</h3>
+							<p>绿色生态 鲜活天然</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item4"></i>
+							<h3>产地直销</h3>
+							<p>价格便宜 天天优惠</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item5"></i>
+							<h3>售后无忧</h3>
+							<p>在线客服 疑难解惑</p>
+						</div>
+					</li>
+				</ul>
+				<!--底部图标导航栏结束-->
+
+				<!--底部分割线开始-->
+				<div class="xlxw-divider-light"></div>
+				<!--底部分割线结束-->
+
+				<!--底部链接导航开始-->
+				<div class="xlxw-footer-link">
+					<div class="xlxw-footer-link-left">
+						<div class="xlxw-footer-link-left-item">
+							<div><img src="../images/index/wechat-png/微信服务号.png" /> <span></span></div>
+							<p>鲜来鲜往微信服务号</p>
+						</div>
+						<div class="xlxw-footer-link-left-item">
+							<div><img src="../images/index/wechat-png/微信订阅号.png" /> <span></span></div>
+							<p>鲜来鲜往微信订阅号</p>
+						</div>
+					</div>
+					<div class="xlxw-footer-link-right">
+						<ul class="xlxw-footer-link-right-item">
+							<li>新手指导</li>
+							<li>
+								<a href="../register.html">账户注册</a>
+							</li>
+							<li>
+								<a href="../login.html">购物流程</a>
+							</li>
+							<li>
+								<a href="../login.html">支付方式</a>
+							</li>
+							<li>
+								<a href="../login.html">售后服务</a>
+							</li>
+						</ul>
+						<ul class="xlxw-footer-link-right-item">
+							<li>商家服务</li>
+							<li>
+								<a href="../login.html">平台规则</a>
+							</li>
+							<li>
+								<a href="../login.html">商家入驻</a>
+							</li>
+							<li>
+								<a href="../login.html">免费培训</a>
+							</li>
+							<li>
+								<a href="../login.html">鲜来资讯</a>
+							</li>
+						</ul>
+						<ul class="xlxw-footer-link-right-item">
+							<li>鲜来配送</li>
+							<li>
+								<a href="../ftf-express.html">配送方式</a>
+							</li>
+							<li>
+								<a href="../ftf-express.html">配送运费</a>
+							</li>
+							<li>
+								<a href="../ftf-express.html">配送范围</a>
+							</li>
+							<li>
+								<a href="../ftf-express.html">配送时间</a>
+							</li>
+						</ul>
+						<ul class="xlxw-footer-link-right-item">
+							<li>鲜来公益</li>
+							<li>
+								<a href="../ftf-love.html">申请帮扶</a>
+							</li>
+							<li>
+								<a href="../ftf-love.html">鲜来众筹</a>
+							</li>
+							<li>
+								<a href="../ftf-love.html">滞销代销</a>
+							</li>
+							<li>
+								<a href="../ftf-love.html">清仓清场</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--底部链接导航结束-->
+
+				<!--底部版权注释开始-->
+				<div class="xlxw-footer-copyright">
+					<p>Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2017-2018 Fresh To Fresh-Inc.All Rights Reserved</p>
+				</div>
+				<!--底部版权注释结束-->
+			</div>
+		</div>
+		<!--网页底部信息结束-->
+	</body>
+
+	<!--引入JQuery文件-->
+	<script src="../scripts/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--引入MDUI.JQ文件-->
+	<script src="../scripts/common.js" type="text/javascript" charset="utf-8"></script>
+	<!--初始化所有组件-->
+	<script type="text/javascript">
+		mdui.mutation();
+	</script>
+	<!--初始化数值-->
+	<script type="text/javascript">
+		document.getElementById("inp").value = 1;
+	</script>
+	<!--初始化函数-->
+	<script type="text/javascript">
+		/*获取任意标签的内容*/
+		function getInnerText(element) {
+			if(typeof element.textContent == "undefined") {
+				return element.innerText;
+			} else {
+				return element.textContent;
+			}
+		}
+
+		/*设置任意标签的内容*/
+		function setInnerText(element, text) {
+			if(typeof element.textContent == "undefined") {
+				return element.innerText = text;
+			} else {
+				return element.textContent = text;
+			}
+		}
+
+		/*地区选择*/
+		(function() {
+			var xlxw_header_areatext = document.getElementById("xlxw_header_areatext");
+			var xlxw_header_areatext_list = document.getElementById("xlxw_header_areatext_ul").getElementsByTagName("li");
+			//循环注册点击事件
+			for(var i = 0; i < xlxw_header_areatext_list.length; i++) {
+				xlxw_header_areatext_list[i].onclick = function() {
+					setInnerText(xlxw_header_areatext, getInnerText(this));
+				};
+			}
+		})();
+
+		/*搜索选项*/
+		(function() {
+			var xlxw_search_group_select_ul_text = document.getElementById("xlxw_search_group_select_ul_text");
+			var xlxw_search_group_select_ul_list = document.getElementById("xlxw_search_group_select_ul").getElementsByTagName("li");
+			//循环注册点击事件
+			for(var i = 0; i < xlxw_search_group_select_ul_list.length; i++) {
+				xlxw_search_group_select_ul_list[i].onclick = function() {
+					var value = getInnerText(this);
+					xlxw_search_group_select_ul_text.innerHTML = value + "<i class=\"mdui-icon material-icons\">&#xe5cf;</i>";
+					document.getElementById("xlxw_search_group_select_ul").style.display = "none";
+				};
+			}
+			xlxw_search_group_select_ul_text.onmouseover = function() {
+				document.getElementById("xlxw_search_group_select_ul").style.display = "block";
+			};
+			document.getElementById("xlxw-search-group-select").onmouseout = function() {
+				document.getElementById('xlxw_search_group_select_ul').style.display = "none";
+			};
+			xlxw_search_group_select_ul_text.onmouseover = function() {
+				document.getElementById('xlxw_search_group_select_ul').style.display = "block";
+			};
+			document.getElementById('xlxw_search_group_select_ul').onmouseover = function() {
+				document.getElementById('xlxw_search_group_select_ul').style.display = "block";
+			};
+		})();
+	</script>
+
+</html>

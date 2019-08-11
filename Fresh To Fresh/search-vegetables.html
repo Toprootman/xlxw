@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<script>
+		window.AESKey = '';
+		// 判断浏览器是否支持placeholder属性
+		function isSupportPlaceholder() {
+			var input = document.createElement('input');
+			return 'placeholder' in input;
+		};
+		(function() {
+			//判断是否是IE浏览器，包括Edge浏览器
+			function IEVersion() {
+				//取得浏览器的userAgent字符串
+				var userAgent = navigator.userAgent;
+				//判断是否IE浏览器
+				var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+				if(isIE) {
+					var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+					reIE.test(userAgent);
+					var fIEVersion = parseFloat(RegExp["$1"]);
+					if(fIEVersion < 11 || !isSupportPlaceholder()) {
+						return true;
+					}
+				} else {
+					return false;
+				}
+			}
+
+			var tpl = ['<img style="border:none;outline:0;display:block;width:450px;height:140px;position:absolute;top:50%;left:50%;margin-left:-225px;margin-top:-70px" src="images/common/error/error.png">'].join('');
+
+			window.onload = function() {
+				if(IEVersion()) {
+					document.write(tpl);
+				}
+			};
+			window.siteName = "温馨提示";
+		})();
+	</script>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>鲜来鲜往 - 蔬菜搜索</title>
+		<meta name="keywords" content="keywords">
+		<meta name="description" content="description">
+		<!--引入网站公共图标文件，默认为绿色-->
+		<link rel="shortcut icon" href="images/common/favicon/green.ico" />
+		<!--引入网站公共样式文件，默认为MDUI.CSS-->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<!--引入当前页面特有样式-->
+		<link rel="stylesheet" type="text/css" href="css/search-vegetables.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<link rel="stylesheet" type="text/css" href="css/footer.css" />
+	</head>
+
+	<body>
+		<!--网页头部导航条开始-->
+		<div class="mdui-container-fluid xlxw-header">
+			<div class="mdui-container">
+				<div class="xlxw-header-left">
+					<i class="mdui-icon material-icons">&#xe8b4;</i>
+					<span class="xlxw-header-areatext" id="xlxw_header_areatext">北京</span>
+					<ul class="xlxw-header-areatext-ul" id="xlxw_header_areatext_ul">
+						<!--4个直辖市开始-->
+						<li>北京</li>
+						<li>上海</li>
+						<li>天津</li>
+						<li>重庆</li>
+						<!--4个直辖市结束-->
+						<!--23个省开始-->
+						<li>河北</li>
+						<li>山东</li>
+						<li>辽宁</li>
+						<li>黑龙江</li>
+						<li>吉林</li>
+						<li>甘肃</li>
+						<li>青海</li>
+						<li>河南</li>
+						<li>江苏</li>
+						<li>湖北</li>
+						<li>湖南</li>
+						<li>江西</li>
+						<li>浙江</li>
+						<li>广东</li>
+						<li>云南</li>
+						<li>福建</li>
+						<li>台湾</li>
+						<li>海南</li>
+						<li>山西</li>
+						<li>四川</li>
+						<li>陕西</li>
+						<li>贵州</li>
+						<li>安徽</li>
+						<!--23个省结束-->
+					</ul>
+				</div>
+				<div class="xlxw-headerbar-right">
+					<ul>
+						<li>
+							<a href="login.html"><span class="xlxw-fruits-color">您好，请登录</span></a>
+						</li>
+						<li>
+							<a href="register.html">免费注册</a>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li>
+							<a href="collection.html">我的收藏</a>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li>
+							<a href="footprint.html">我的足迹</a>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-buyer">
+							<a href="login.html">我是采购商<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-buyer-ul">
+								<li>
+									<a href="login.html">我的优惠</a>
+								</li>
+								<li>
+									<a href="login.html">发布需求</a>
+								</li>
+								<li>
+									<a href="login.html">采购订单</a>
+								</li>
+								<li>
+									<a href="login.html">采购计划</a>
+								</li>
+								<li>
+									<a href="login.html">查询均价</a>
+								</li>
+							</ul>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-seller">
+							<a href="login.html">我是供应商<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-seller-ul">
+								<li>
+									<a href="login.html">我的店铺</a>
+								</li>
+								<li>
+									<a href="login.html">需求中心</a>
+								</li>
+								<li>
+									<a href="login.html">免费开店</a>
+								</li>
+								<li>
+									<a href="login.html">店铺装修</a>
+								</li>
+								<li>
+									<a href="login.html">市场动态</a>
+								</li>
+							</ul>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-service">
+							<a href="login.html">服务中心<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-service-ul">
+								<li>
+									<a href="login.html">买家服务</a>
+								</li>
+								<li>
+									<a href="login.html">卖家服务</a>
+								</li>
+								<li>
+									<a href="login.html">打假举报</a>
+								</li>
+								<li>
+									<a href="login.html">侵权投诉</a>
+								</li>
+							</ul>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-webnav">
+							<a href="">网站导航<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-webnav-ul">
+								<li><span class="xlxw-fruits-color">时令水果</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-fruits.html">苹果</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">香蕉</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">桔子</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">草莓</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">火龙果</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">柠檬</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">橙子</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">西瓜</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">油桃</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">蓝莓</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">猕猴桃</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">荔枝</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-vegetables-color">新鲜蔬菜</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-vegetables.html">生菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">西兰花</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">菠菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">荠菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">香菇</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">芹菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">韭菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">茼蒿</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">香菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">芦笋</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">胡萝卜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">尖椒</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-meat-color">肉禽蛋品</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-meat.html">猪肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">五花肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">牛肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">鸡肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">鸭肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">羊肉卷</a>
+										</li>
+										<li>
+											<a href="search-meat.html">羊肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">里脊</a>
+										</li>
+										<li>
+											<a href="search-meat.html">排骨</a>
+										</li>
+										<li>
+											<a href="search-meat.html">羊排</a>
+										</li>
+										<li>
+											<a href="search-meat.html">羊腿</a>
+										</li>
+										<li>
+											<a href="search-meat.html">火鸡</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-seafood-color">海鲜水产</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-seafood.html">带鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">三文鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">甲鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">鲈鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">红虾</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">黄鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">大闸蟹</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">生蚝</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">皮皮虾</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">金枪鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">甲鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">荔枝</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-oil-color">柴米油盐</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-oil.html">苹果</a>
+										</li>
+										<li>
+											<a href="search-oil.html">香蕉</a>
+										</li>
+										<li>
+											<a href="search-oil.html">桔子</a>
+										</li>
+										<li>
+											<a href="search-oil.html">草莓</a>
+										</li>
+										<li>
+											<a href="search-oil.html">火龙果</a>
+										</li>
+										<li>
+											<a href="search-oil.html">柠檬</a>
+										</li>
+										<li>
+											<a href="search-oil.html">橙子</a>
+										</li>
+										<li>
+											<a href="search-oil.html">西瓜</a>
+										</li>
+										<li>
+											<a href="search-oil.html">油桃</a>
+										</li>
+										<li>
+											<a href="search-oil.html">蓝莓</a>
+										</li>
+										<li>
+											<a href="search-oil.html">猕猴桃</a>
+										</li>
+										<li>
+											<a href="search-oil.html">荔枝</a>
+										</li>
+									</ul>
+								</li>
+								<li class="xlxw-headerbar-webnav-ul-last">鲜来快递
+									<ul class="xlxw-headerbar-webnav-ul-express">
+										<li>
+											<a href="ftf-express.html">快递服务</a>
+											<a href="ftf-express.html">速运服务</a>
+											<a href="ftf-express.html">冷运服务</a>
+											<a href="ftf-express.html">仓储服务</a>
+											<a href="ftf-express.html">资费查询</a>
+											<a href="ftf-express.html">货物查询</a>
+										</li>
+									</ul>
+								</li>
+								<li class="xlxw-headerbar-webnav-ul-last">鲜来公益
+									<ul class="xlxw-headerbar-webnav-ul-public-welfare">
+										<li>
+											<a href="ftf-love.html">申请帮助</a>
+											<a href="ftf-love.html">鲜来众筹</a>
+											<a href="ftf-love.html">滞留代销</a>
+											<a href="ftf-love.html">清仓清场</a>
+											<a href="ftf-love.html">公益历史</a>
+											<a href="ftf-love.html">公益足迹</a>
+										</li>
+									</ul>
+								</li>
+								<li class="xlxw-headerbar-webnav-ul-last">扫码打开手机版
+									<ul class="xlxw-headerbar-webnav-ul-mobile-phone-edition">
+										<li>
+											<img src="images/index/header/mpe.png" width="79%" height="79%" />
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--网页头部导航条结束-->
+
+		<!--请在这里写代码开始...-->
+		<div class="mdui-container-fluid xlxw-bodyer">
+			<div class="mdui-container">
+				<!--网站logo开始-->
+				<div class="xlxw-logo-left">
+					<a href="index.html" class="xlxw-logo-left-a"></a>
+				</div>
+				<!--网站logo结束-->
+				<!--搜索框开始-->
+				<div class="xlxw-logo-right">
+					<div class="xlxw-logo-right-group">
+						<input type="text" class="xlxw-logo-search" value="请输入您想要的商品">
+						<input type="button" value="搜索" class="xlxw-logo-button">
+					</div>
+				</div>
+				<!--搜索框结束-->
+				<!--导航栏开始-->
+				<div class="xlxw-navigation">
+					<ul class="xlxw-navigation-main">
+						<li class="xlxw-navigation-one">全部分类</li>
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="#">闪购</a>
+						</li>
+						<li>
+							<a href="#">全球生鲜</a>
+						</li>
+						<li>
+							<a href="#">团购</a>
+						</li>
+						<li>
+							<a href="#" style="border: none;">限时优惠</a>
+						</li>
+					</ul>
+					<div class="xlxw-navigation-bottom">
+
+					</div>
+				</div>
+
+				<!--导航栏结束-->
+				<!--相关搜索开始-->
+				<div class="xlxw-search-01">
+					<span>相关搜索：</span>
+					<a href="#">贝壳</a>
+					<a href="#">鱼类</a>
+					<a href="#">虾类</a>
+				</div>
+				<!--相关搜索结束-->
+				<!--搜索选择开始-->
+				<ul class="xlxw-search-main">
+					<p class="xlxw-search-main-119">搜索到119件相关商品</p>
+					<li class="xlxw-search-brandlogo">
+						<dl>
+							<dt>品牌</dt>
+							<dd><img class="lazy" data-original="images/search-oil/577254fdN2d33894d.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/574d5bfdN606f70e2.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/579095eaNdd1dbb45.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/57b58f28Nde31874d.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/58a12801Nc62da698.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/593e2ef1Naf7ec533.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/5982bf26Nebc933d7.jpg" /></dd>
+						</dl>
+					</li>
+					<p class="xlxw-search-main-line"></p>
+					<li class="xlxw-search-types">
+						<dt>分类</dt>
+						<dd>西红柿</dd>
+						<dd>黄瓜</dd>
+						<dd>生姜</dd>
+						<dd>白菜</dd>
+						<dd>胡萝卜</dd>
+						<dd>玉米</dd>
+						<dd>其他</dd>
+					</li>
+					<p class="xlxw-search-main-line"></p>
+					<li class="xlxw-search-home"><dt>原产地</dt>
+						<dd>澳大利亚</dd>
+						<dd>中国大陆</dd>
+						<dd>美国</dd>
+						<dd>日本</dd>
+						<dd>新西兰</dd>
+						<dd>加拿大</dd>
+						<dd>其他</dd>
+					</li>
+				</ul>
+				<!--搜索选择结束-->
+				<!--主体内容开始-->
+				<div class="xlxw-search-sort-left">
+					<ul>
+						<li style="background-color: #F5F5F5;">
+							<a href="#">综合排序</a>
+						</li>
+						<li>
+							<a href="#">销量排序</a>
+						</li>
+						<li>
+							<a href="#">价格优先</a>
+						</li>
+						<li style="border: none;">
+							<a href="#">评价为主</a>
+						</li>
+					</ul>
+				</div>
+				<div class="xlxw-main-body">
+					<div class="xlxw-goods-left">
+						<a href="product/1535525874456.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/1/1535462813124.jpg" />
+								<h4>￥24.99/箱</h4>
+								<h5>自然之星 宁夏有机菜心 约250g 菜薹 菜尖 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">109+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券58-83</span>
+							</div>
+						</a>
+						<a href="product/1535525874497.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/2/1535462816585.jpg" />
+								<h4>￥16.12/箱</h4>
+								<h5>东升农场 菠菜 约300g</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">315+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券51-66</span>
+							</div>
+						</a>
+						<a href="product/1535525874543.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/3/1535462819843.jpg" />
+								<h4>￥29.27/箱</h4>
+								<h5>西兰花 花椰菜 西蓝花1个装  新鲜蔬菜 现摘现发</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">307+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券59-62</span>
+							</div>
+						</a>
+						<a href="product/1535525874588.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/4/1535462822550.jpg" />
+								<h4>￥23.73/箱</h4>
+								<h5>绿鲜知 西兰花 花椰菜 西蓝花 约300g  火锅涮菜 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">780+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券46-70</span>
+							</div>
+						</a>
+						<a href="product/1535525874661.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/5/1535462824917.jpg" />
+								<h4>￥23.49/箱</h4>
+								<h5>小汤山 菜心 约250g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">756+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券43-94</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525874716.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/6/1535462827357.jpg" />
+								<h4>￥18.71/箱</h4>
+								<h5>绿鲜知 球生菜 约400g  火锅涮菜 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">1010+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券27-142</span>
+							</div>
+						</a>
+						<a href="product/1535525874756.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/7/1535462829448.jpg" />
+								<h4>￥23.73/箱</h4>
+								<h5>绿鲜知 紫甘蓝 约800g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">590+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券26-65</span>
+							</div>
+						</a>
+						<a href="product/1535525874798.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/8/1535462831923.jpg" />
+								<h4>￥19.35/箱</h4>
+								<h5>绿鲜知 三宝白菜 约1kg 火锅涮菜 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">504+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券19-148</span>
+							</div>
+						</a>
+						<a href="product/1535525874839.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/9/1535462834286.jpg" />
+								<h4>￥28.59/箱</h4>
+								<h5>绿鲜知 上海青 小油菜 小青菜 约400g 火锅涮菜 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">35+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券10-149</span>
+							</div>
+						</a>
+						<a href="product/1535525874876.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/10/1535462836361.jpg" />
+								<h4>￥11.78/箱</h4>
+								<h5>绿农说  供港蔬菜  红茄 约500g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">153+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券21-55</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525874918.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/11/1535462838261.jpg" />
+								<h4>￥12.18/箱</h4>
+								<h5>自然之星 有机菠菜 约250g 波斯菜 赤根菜 鹦鹉菜 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">412+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券12-86</span>
+							</div>
+						</a>
+						<a href="product/1535525874960.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/12/1535462840565.jpg" />
+								<h4>￥13.15/箱</h4>
+								<h5>有机汇 有机小油菜上海青  欧盟、美国、中国有机认证 鸡毛菜 250g</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">341+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券49-113</span>
+							</div>
+						</a>
+						<a href="product/1535525875009.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/13/1535462842766.jpg" />
+								<h4>￥23.34/箱</h4>
+								<h5>新鲜苤蓝 2.5kg 撇了芥蓝 大头菜 大芥菜疙瘩 苤蓝 下饭菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">504+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券33-113</span>
+							</div>
+						</a>
+						<a href="product/1535525875047.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/14/1535462844852.jpg" />
+								<h4>￥17.89/箱</h4>
+								<h5>新鲜茴香菜 山东农家菜 4斤装 可做茴香丸子新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">272+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券40-115</span>
+							</div>
+						</a>
+						<a href="product/1535525875086.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/15/1535462847752.jpg" />
+								<h4>￥16.43/箱</h4>
+								<h5>自然之星 有机西兰花 约300g 绿菜花 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">266+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券15-94</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525875127.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/16/1535462850166.jpg" />
+								<h4>￥15.77/箱</h4>
+								<h5>小汤山 香菜 约70g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">1004+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券13-96</span>
+							</div>
+						</a>
+						<a href="product/1535525875173.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/17/1535462853011.jpg" />
+								<h4>￥16.42/箱</h4>
+								<h5>绿农说  供港蔬菜 菜心 约300g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">70+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券17-88</span>
+							</div>
+						</a>
+						<a href="product/1535525875216.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/18/1535462855813.jpg" />
+								<h4>￥16.59/箱</h4>
+								<h5>绿鲜知 罗马生菜 约400g 火锅涮菜 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">865+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券29-94</span>
+							</div>
+						</a>
+						<a href="product/1535525875258.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/19/1535462858501.jpg" />
+								<h4>￥18.49/箱</h4>
+								<h5>小汤山 三宝白菜 约600g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">129+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券30-69</span>
+							</div>
+						</a>
+						<a href="product/1535525875302.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/20/1535462860998.jpg" />
+								<h4>￥25.82/箱</h4>
+								<h5>密园小农 菠菜 约500g 新鲜蔬菜 火锅涮菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">429+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券55-72</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525875346.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/21/1535462865031.jpg" />
+								<h4>￥20.73/箱</h4>
+								<h5>寻天果蔬 北京密云西兰花 新鲜蔬菜 1个 约350g</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">732+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券48-57</span>
+							</div>
+						</a>
+						<a href="product/1535525875396.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/22/1535462867765.jpg" />
+								<h4>￥26.16/箱</h4>
+								<h5>密园小农 菜心 500g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">405+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券12-139</span>
+							</div>
+						</a>
+						<a href="product/1535525875438.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/23/1535462869849.jpg" />
+								<h4>￥10.09/箱</h4>
+								<h5>博多客 广东芥蓝 500g 中花芥蓝新鲜时鲜蔬菜 日天 生鲜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">830+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券38-108</span>
+							</div>
+						</a>
+						<a href="product/1535525875484.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/24/1535462872529.jpg" />
+								<h4>￥14.15/箱</h4>
+								<h5>绿农说  供港蔬菜  上海青苗 约300g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">139+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券33-138</span>
+							</div>
+						</a>
+						<a href="product/1535525875530.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/25/1535462874752.jpg" />
+								<h4>￥10.05/箱</h4>
+								<h5>密云农业 农家自种 韭菜 500g 新鲜时令蔬菜 </h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">360+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券36-79</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525875573.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/26/1535462877270.jpg" />
+								<h4>￥22.87/箱</h4>
+								<h5>绿农说  供港蔬菜 苦瓜 约500g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">593+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券16-99</span>
+							</div>
+						</a>
+						<a href="product/1535525875621.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/27/1535462878666.jpg" />
+								<h4>￥20.91/箱</h4>
+								<h5>密园小农 小香芹菜 500g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">930+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券40-75</span>
+							</div>
+						</a>
+						<a href="product/1535525875671.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/28/1535462880115.jpg" />
+								<h4>￥15.66/箱</h4>
+								<h5>蔬菜沙拉500g包新鲜色拉轻食材水果混合生菜即食健身套餐 江浙沪安徽包邮 9种沙拉菜混装500g</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">247+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券11-66</span>
+							</div>
+						</a>
+						<a href="product/1535525875711.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/29/1535462882413.jpg" />
+								<h4>￥18.42/箱</h4>
+								<h5>绿鲜知 鲜百合 九年生 约250g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">527+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券58-140</span>
+							</div>
+						</a>
+						<a href="product/1535525875755.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/30/1535462891251.jpg" />
+								<h4>￥15.66/箱</h4>
+								<h5>小汤山 西芹 约400g 新鲜蔬菜 芹菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">606+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券39-70</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525875797.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/31/1535462893357.jpg" />
+								<h4>￥13.3/箱</h4>
+								<h5>小汤山 苦瓜 约500g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">166+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券42-147</span>
+							</div>
+						</a>
+						<a href="product/1535525875840.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/32/1535462894785.jpg" />
+								<h4>￥13.29/箱</h4>
+								<h5>寻天果蔬 密云新鲜茴香 新鲜蔬菜 500g</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">647+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券10-102</span>
+							</div>
+						</a>
+						<a href="product/1535525875881.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/33/1535462896631.jpg" />
+								<h4>￥27.32/箱</h4>
+								<h5>绿鲜知 圆茄子 约400g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">914+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券52-131</span>
+							</div>
+						</a>
+						<a href="product/1535525875926.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/34/1535462898687.jpg" />
+								<h4>￥13.48/箱</h4>
+								<h5>甄奇异   茴香菜 新鲜蔬菜 小茴香叶 茴香丸子 茴香苗 农家菜 2kg</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">349+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券30-115</span>
+							</div>
+						</a>
+						<a href="product/1535525875978.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/35/1535462900383.jpg" />
+								<h4>￥11.04/箱</h4>
+								<h5>【庆阳馆】子午岭深山黑木耳 山珍干货 500g装</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">638+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券19-100</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525876018.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/36/1535462902506.jpg" />
+								<h4>￥20.15/箱</h4>
+								<h5>绿鲜知 韭菜 约300g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">96+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券48-124</span>
+							</div>
+						</a>
+						<a href="product/1535525876060.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/37/1535462903751.jpg" />
+								<h4>￥13.61/箱</h4>
+								<h5>微玉冰糖玉 水果玉米 冰糖玉米  3根装 总重约750g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">901+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券13-90</span>
+							</div>
+						</a>
+						<a href="product/1535525876121.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/38/1535462905412.jpg" />
+								<h4>￥23.15/箱</h4>
+								<h5>绿鲜知 长茄子 约500g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">579+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券24-109</span>
+							</div>
+						</a>
+						<a href="product/1535525876183.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/39/1535462907478.jpg" />
+								<h4>￥13.62/箱</h4>
+								<h5>小汤山 黄瓜 约320g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">131+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券50-73</span>
+							</div>
+						</a>
+						<a href="product/1535525876235.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/40/1535462911149.jpg" />
+								<h4>￥12.94/箱</h4>
+								<h5>怀府八州 河南焦作温县60-70cm沙土铁棍山药2.5kg 蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">136+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券49-113</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525876295.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/41/1535462912752.jpg" />
+								<h4>￥20.99/箱</h4>
+								<h5>沱沱工社 有机白萝卜 约600g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">269+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券26-80</span>
+							</div>
+						</a>
+						<a href="product/1535525876352.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/42/1535462914432.jpg" />
+								<h4>￥22.68/箱</h4>
+								<h5>农大姐妹 绿芦笋 峡山基地现摘 青芦笋3斤 时令蔬菜 青笋 送刮皮刀 包邮顺丰冷链</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">263+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券22-88</span>
+							</div>
+						</a>
+						<a href="product/1535525876406.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/43/1535462916112.jpg" />
+								<h4>￥21.22/箱</h4>
+								<h5>家美舒达 山东小土豆 约2.5kg 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">561+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券38-127</span>
+							</div>
+						</a>
+						<a href="product/1535525876465.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/44/1535462937319.jpg" />
+								<h4>￥13.49/箱</h4>
+								<h5>家美舒达 山东特产 潍坊青萝卜 水果萝卜 约1kg 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">36+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券11-55</span>
+							</div>
+						</a>
+						<a href="product/1535525876523.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/45/1535462943033.jpg" />
+								<h4>￥20.31/箱</h4>
+								<h5>【香格里拉馆】森吉尼达 香格里拉野生新鲜松茸3-5CM  500g 未开伞 野生新鲜松茸3-5cm 3-5cm</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">417+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券28-115</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525876572.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/46/1535462945689.jpg" />
+								<h4>￥20.21/箱</h4>
+								<h5>怀府人家 河南焦作铁棍山药 2.5kg 怀山药 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">216+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券44-142</span>
+							</div>
+						</a>
+						<a href="product/1535525876616.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/47/1535462948169.jpg" />
+								<h4>￥16.58/箱</h4>
+								<h5>【香格里拉馆】森吉尼达 香格里拉野生新鲜松茸3-5CM  500g 未开伞 野生新鲜松茸3-5cm 3-5cm</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">814+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券29-148</span>
+							</div>
+						</a>
+						<a href="product/1535525876661.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/48/1535462950077.jpg" />
+								<h4>￥21.91/箱</h4>
+								<h5>【威宁馆】新鲜土豆 马铃薯/洋芋 2.5kg箱装新鲜蔬菜 红皮黄皮 红皮黄心</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">918+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券35-139</span>
+							</div>
+						</a>
+						<a href="product/1535525876732.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/49/1535462951543.jpg" />
+								<h4>￥18.25/箱</h4>
+								<h5>绿鲜知 云南甜玉米 水果玉米 约2.5kg 6-9根 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">650+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券53-57</span>
+							</div>
+						</a>
+						<a href="product/1535525876793.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/50/1535462953411.jpg" />
+								<h4>￥16.36/箱</h4>
+								<h5>枝纯 吮指甜心 水果胡萝卜 136g*3包 新鲜水果蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">525+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券26-68</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525876837.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/51/1535462956004.jpg" />
+								<h4>￥20.78/箱</h4>
+								<h5>泥锅泥碗 芦笋 250g 自然生长</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">489+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券42-136</span>
+							</div>
+						</a>
+						<a href="product/1535525876897.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/52/1535462958033.jpg" />
+								<h4>￥26.23/箱</h4>
+								<h5>聚怀斋 焦作温县沙土铁棍山药 3kg 礼盒装 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">325+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券57-148</span>
+							</div>
+						</a>
+						<a href="product/1535525876944.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/53/1535462959657.jpg" />
+								<h4>￥15.22/箱</h4>
+								<h5>【香格里拉馆】森吉尼达 香格里拉野生新鲜松茸3-5CM  500g 未开伞 野生新鲜松茸3-5cm 3-5cm</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">551+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券51-68</span>
+							</div>
+						</a>
+						<a href="product/1535525876988.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/54/1535462962246.jpg" />
+								<h4>￥11.17/箱</h4>
+								<h5>风尚鲜生 农家平菇 新鲜蔬菜 400g</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">592+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券51-91</span>
+							</div>
+						</a>
+						<a href="product/1535525877037.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/55/1535462964107.jpg" />
+								<h4>￥21.22/箱</h4>
+								<h5>绿鲜知 彩色糯玉米 粘玉米 约1kg 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">792+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券12-107</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525877085.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/56/1535462966417.jpg" />
+								<h4>￥27.3/箱</h4>
+								<h5>小汤山 香菇 约200g 安心蔬菜 基地自产 当天采摘 顺丰次日达 蘑菇</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">539+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券19-98</span>
+							</div>
+						</a>
+						<a href="product/1535525877138.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/57/1535462968257.jpg" />
+								<h4>￥26.0/箱</h4>
+								<h5>绿鲜知 平菇 蘑菇 约400g 火锅涮菜 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">882+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券31-125</span>
+							</div>
+						</a>
+						<a href="product/1535525877186.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/58/1535462969639.jpg" />
+								<h4>￥27.57/箱</h4>
+								<h5>沱沱工社 有机黄瓜 约500g 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">74+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券11-76</span>
+							</div>
+						</a>
+						<a href="product/1535525877247.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/59/1535462971281.jpg" />
+								<h4>￥23.49/箱</h4>
+								<h5>倍多鲜 香菇 40g/袋 山珍干货</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">634+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券33-111</span>
+							</div>
+						</a>
+						<a href="product/1535525877302.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/vegetables/60/1535462973155.jpg" />
+								<h4>￥25.01/箱</h4>
+								<h5>绿鲜知 白萝卜 约1200g  火锅涮菜 新鲜蔬菜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">452+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券26-106</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!--页码选择开始-->
+				<div class="xlxw-search-ul ">
+					<ul>
+						<li>»</li>
+						<li>12</li>
+						<li>11</li>
+						<li>10</li>
+						<li>9</li>
+						<li>8</li>
+						<li>7</li>
+						<li>6</li>
+						<li>5</li>
+						<li>4</li>
+						<li>3</li>
+						<li>2</li>
+						<li style="background-color: #A7BF37; color: white; ">1</li>
+						<li>
+							«</li>
+					</ul>
+				</div>
+				<!--页码选择结束-->
+				<!--主体内容结束-->
+			</div>
+		</div>
+
+		<!--请在这里写代码结束...-->
+
+		<!--网页底部信息开始-->
+		<div class="mdui-container-fluid xlxw-footer">
+			<div class="mdui-container">
+				<!--底部图标导航栏开始-->
+				<ul class="xlxw-footer-icons">
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item1"></i>
+							<h3>食品安全</h3>
+							<p>精选生鲜 严格质检</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item2"></i>
+							<h3>全程冷链</h3>
+							<p>自营物流 安全可控</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item3"></i>
+							<h3>源头直采</h3>
+							<p>绿色生态 鲜活天然</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item4"></i>
+							<h3>产地直销</h3>
+							<p>价格便宜 天天优惠</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item5"></i>
+							<h3>售后无忧</h3>
+							<p>在线客服 疑难解惑</p>
+						</div>
+					</li>
+				</ul>
+				<!--底部图标导航栏结束-->
+
+				<!--底部分割线开始-->
+				<div class="xlxw-divider-light"></div>
+				<!--底部分割线结束-->
+
+				<!--底部链接导航开始-->
+				<div class="xlxw-footer-link">
+					<div class="xlxw-footer-link-left">
+						<div class="xlxw-footer-link-left-item">
+							<div><img class="lazy" data-original="images/index/wechat-png/微信服务号.png" /> <span></span></div>
+							<p>鲜来鲜往微信服务号</p>
+						</div>
+						<div class="xlxw-footer-link-left-item">
+							<div><img class="lazy" data-original="images/index/wechat-png/微信订阅号.png" /> <span></span></div>
+							<p>鲜来鲜往微信订阅号</p>
+						</div>
+					</div>
+					<div class="xlxw-footer-link-right">
+						<ul class="xlxw-footer-link-right-item">
+							<li>新手指导</li>
+							<li>
+								<a href="register.html">账户注册</a>
+							</li>
+							<li>
+								<a href="login.html">购物流程</a>
+							</li>
+							<li>
+								<a href="login.html">支付方式</a>
+							</li>
+							<li>
+								<a href="login.html">售后服务</a>
+							</li>
+						</ul>
+						<ul class="xlxw-footer-link-right-item">
+							<li>商家服务</li>
+							<li>
+								<a href="login.html">平台规则</a>
+							</li>
+							<li>
+								<a href="login.html">商家入驻</a>
+							</li>
+							<li>
+								<a href="login.html">免费培训</a>
+							</li>
+							<li>
+								<a href="login.html">鲜来资讯</a>
+							</li>
+						</ul>
+						<ul class="xlxw-footer-link-right-item">
+							<li>鲜来配送</li>
+							<li>
+								<a href="ftf-express.html">配送方式</a>
+							</li>
+							<li>
+								<a href="ftf-express.html">配送运费</a>
+							</li>
+							<li>
+								<a href="ftf-express.html">配送范围</a>
+							</li>
+							<li>
+								<a href="ftf-express.html">配送时间</a>
+							</li>
+						</ul>
+						<ul class="xlxw-footer-link-right-item">
+							<li>鲜来公益</li>
+							<li>
+								<a href="ftf-love.html">申请帮扶</a>
+							</li>
+							<li>
+								<a href="ftf-love.html">鲜来众筹</a>
+							</li>
+							<li>
+								<a href="ftf-love.html">滞销代销</a>
+							</li>
+							<li>
+								<a href="ftf-love.html">清仓清场</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--底部链接导航结束-->
+
+				<!--底部版权注释开始-->
+				<div class="xlxw-footer-copyright">
+					<p>Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2017-2018 Fresh To Fresh-Inc.All Rights Reserved</p>
+				</div>
+				<!--底部版权注释结束-->
+			</div>
+		</div>
+		<!--网页底部信息结束-->
+	</body>
+
+	<!--引入JQuery文件-->
+	<script src="scripts/jquery-1.12.4.min.js " type="text/javascript " charset="utf-8 "></script>
+	<!--引入MDUI.JQ文件-->
+	<script src="scripts/common.js " type="text/javascript " charset="utf-8 "></script>
+	<!--初始化所有组件-->
+	<script type="text/javascript ">
+		mdui.mutation();
+	</script>
+	<!--引入懒加载JS-->
+	<script src="scripts/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("img.lazy").lazyload({
+			effect: 'fadeIn',
+			placeholder: 'images/common/loading/loading.png'
+		});
+	</script>
+	<!--初始化函数-->
+	<script type="text/javascript">
+		/*获取任意标签的内容*/
+		function getInnerText(element) {
+			if(typeof element.textContent == "undefined") {
+				return element.innerText;
+			} else {
+				return element.textContent;
+			}
+		}
+
+		/*设置任意标签的内容*/
+		function setInnerText(element, text) {
+			if(typeof element.textContent == "undefined") {
+				return element.innerText = text;
+			} else {
+				return element.textContent = text;
+			}
+		}
+
+		/*地区选择*/
+		(function() {
+			var xlxw_header_areatext = document.getElementById("xlxw_header_areatext");
+			var xlxw_header_areatext_list = document.getElementById("xlxw_header_areatext_ul").getElementsByTagName("li");
+			//循环注册点击事件
+			for(var i = 0; i < xlxw_header_areatext_list.length; i++) {
+				xlxw_header_areatext_list[i].onclick = function() {
+					setInnerText(xlxw_header_areatext, getInnerText(this));
+				};
+			}
+		})();
+	</script>
+
+</html>

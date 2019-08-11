@@ -1,0 +1,1112 @@
+@charset "utf-8";
+
+/*!
+ * 
+ * < 鲜来鲜往 - 商品详情页样式 >
+ * 
+ * @author:张晨曦;
+ * @since:2.0;
+ * 
+ * */
+
+
+/*全局变量样式*/
+
+body {
+	min-width: 1280px !important;
+	background-color: #F3F3F3 !important;
+	color: #222 !important;
+	font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", sans-serif;
+}
+
+.mdui-container {
+	min-width: 1280px !important;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 1280px;
+	color: #212121;
+	font-size: 14px;
+	background-color: #F9F9F9;
+}
+
+.mdui-container {
+	min-width: 1280px !important;
+}
+
+li {
+	list-style: none;
+}
+
+
+/*banner*/
+
+.xlxw-banner img {
+	width: 1264px;
+	height: 110px;
+}
+
+
+/*店铺导航栏*/
+
+.ziying {
+	position: absolute;
+	top: 170px;
+	left: 240px;
+	width: 160px;
+	height: 60px;
+	background: #94c966;
+	border: double 1px white;
+	opacity: 0.6;
+}
+
+.ziying-text {
+	width: 160px;
+	height: 30px;
+	text-align: center;
+	font-size: 16px;
+	color: white;
+	font-weight: 800;
+	line-height: 30px;
+	letter-spacing: 10px;
+}
+
+.xlxw-body-navigation {
+	margin-top: -6px;
+	width: 1264px;
+	height: 36px;
+	background-color: #94c966;
+}
+
+.xlxw-body-navigation ul {
+	margin-left: 25px;
+	width: 1200px;
+	height: 36px;
+}
+
+.xlxw-body-navigation li {
+	margin-right: 5px;
+	line-height: 36px;
+	color: white;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+
+/*详情*/
+
+.xlxw-details {
+	width: 1264px;
+	height: 512px;
+	background-color: white;
+	padding-top: 20px;
+}
+
+.xlxw-details h2 {
+	margin-left: 40px;
+	line-height: 60px;
+}
+
+
+/*放大镜*/
+
+.fangda {
+	position: relative;
+	left: 20px;
+}
+
+.img-list>ul {
+	list-style: none;
+	padding: 0;
+}
+
+.zoom-box {
+	position: relative;
+	width: 350px;
+	height: 350px;
+}
+
+.small-box {
+	width: 350px;
+	height: 350px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+
+.small-box .square {
+	position: absolute;
+	background-color: yellow;
+	opacity: 0.5;
+	display: none;
+}
+
+.small-box .mask {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.img-list {
+	margin-top: 10px;
+}
+
+.img-list ul:after {
+	clear: both;
+	content: '';
+	display: table;
+}
+
+.img-list ul li {
+	float: left;
+	margin-right:20px ;
+}
+
+.img-list img {
+	border: 2px solid #E0E0E0;
+}
+
+.img-list img:hover {
+	border: 2px solid red;
+}
+
+.big-box {
+	z-index: 5000;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	margin-left: 2px;
+	width: 350px;
+	height: 350px;
+	border: 1px solid #ccc;
+	display: none;
+	overflow: hidden;
+}
+
+.big-box img {
+	position: absolute;
+}
+
+
+/*下单选项卡*/
+
+.xlxw-details-option {
+	z-index: 100;
+	position: absolute;
+	top: 300px;
+	left: 538px;
+	width: 640px;
+}
+
+.xlxw-details-option a {
+	text-decoration: none;
+	color: black;
+}
+
+.xlxw-details-option li {
+	float: left;
+	width: 130px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	margin-right: 1px;
+}
+
+
+/*选项卡1*/
+
+.xlxw-details-option>a {
+	position: relative;
+	top: 10px;
+	display: block;
+	width: 640px;
+	height: 20px;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.xlxw-details-option-1 {
+	width: 640px;
+	height: 460px;
+	background: white;
+}
+
+
+/*选项卡1标价*/
+
+.xlxw-details-option-1-money {
+	margin-top: 20px;
+	width: 640px;
+	height: 120px;
+	background-color: #E3FFC6;
+	text-align: left;
+}
+
+.xlxw-details-option-1-money span {
+	margin-left: 20px;
+	margin-right: 30px;
+}
+
+.xlxw-details-option-1-distributor {
+	margin-left: 520px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	line-height: 30px;
+	width: 120px;
+	height: 30px;
+	background-color: #4ab344;
+	color: white;
+	text-align: right;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.xlxw-details-option-1-information {
+	width: 640px;
+	height: 120px;
+	text-align: left;
+	border-bottom: solid 2px #F0F0F0;
+}
+
+.xlxw-details-option-1-information-1 {
+	clear: both;
+	margin-left: 20px;
+	display: block;
+	width: 80px;
+	height: 40px;
+	float: left;
+	color: #838383;
+	font-size: 12px;
+}
+
+.xlxw-details-option-1-information-2 {
+	margin-left: 50px;
+	display: block;
+	width: 165px;
+	height: 40px;
+	float: left;
+	color: black;
+	font-size: 14px;
+}
+
+.xlxw-details-option-1-information-3 {
+	margin-left: 50px;
+	display: block;
+	width: 91px;
+	height: 40px;
+	float: left;
+	color: black;
+	font-size: 14px;
+}
+
+.xlxw-details-option-1-information-4 {
+	margin-left: 30px;
+	display: block;
+	width: 45px;
+	height: 40px;
+	float: left;
+	color: black;
+	font-size: 14px;
+}
+
+.xlxw-details-option-1-information-5 {
+	margin-left: 3px;
+	display: block;
+	width: 75px;
+	height: 40px;
+	float: left;
+	color: black;
+	font-size: 14px;
+}
+
+.xlxw-details-option-1-information-6 {
+	margin-left: 30px;
+	display: block;
+	width: 75px;
+	height: 40px;
+	float: left;
+	color: black;
+	font-size: 14px;
+}
+
+.xlxw-details-option-1-information-7 {
+	display: block;
+	color: black;
+	font-size: 14px;
+	position: relative;
+	top: -36px;
+	left: 180px;
+}
+
+.xlxw-details-option-1-information a {
+	height: 20px;
+	background-color: white;
+	border: solid 1px white;
+}
+
+.xlxw-details-option-1-information a:hover {
+	background-color: #F9F9F9;
+	border: solid 1px darkgray;
+	cursor: pointer;
+}
+
+
+/*累加位置*/
+
+.xlxw-details-option-1-Purchase {
+	width: 640px;
+	height: 134px;
+	text-align: left;
+	border-bottom: solid 2px #F0F0F0;
+}
+
+.xlxw-details-option-1-Purchase-quantity {
+	height: 32px;
+	width: 640px;
+}
+
+.xlxw-details-option-1-Purchase-button {
+	position: relative;
+	top: -10px;
+	left: 150px;
+}
+
+.xlxw-details-option-1-Purchase-button-left {
+	width: 160px;
+	height: 40px;
+	background-color: #E3FFC6;
+	color: #4ab344;
+	border-style: none;
+	margin-right: 10px;
+	border: solid 1px #4ab344;
+}
+
+.xlxw-details-option-1-Purchase-button-left:hover {
+	cursor: pointer;
+}
+
+.xlxw-details-option-1-Purchase-button-right {
+	width: 160px;
+	height: 40px;
+	background-color: #4ab344;
+	border-style: none;
+	border: solid 1px #4ab344;
+	color: white;
+}
+
+.xlxw-details-option-1-Purchase-button-right:hover {
+	cursor: pointer;
+}
+
+
+/*累加*/
+
+.xlxw-details-option-1-Purchase input {
+	position: relative;
+	top: -6px;
+	left: 2px;
+}
+
+.sdddq {
+	font-family: "宋体";
+	font-size: 20px;
+	height: 30px;
+	width: 150px;
+}
+
+.lhj {
+	font-family: "宋体";
+	font-size: 60px;
+	height: 100px;
+	width: 350px;
+	line-height: 100px;
+	text-align: center;
+	float: left;
+}
+
+.sssd {
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #999;
+	text-align: center;
+}
+
+.xlxw-details-option-1-guarantee {
+	width: 640px;
+	height: 60px;
+	text-align: left;
+}
+
+.xlxw-details-option-1-guarantee-1 {
+	clear: both;
+	position: relative;
+	top: -40px;
+	left: 150px;
+	width: 490px;
+	height: 40px;
+}
+
+.xlxw-details-option-1-guarantee-1 img {
+	position: relative;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+}
+
+.xlxw-details-option-1-guarantee-1 a {
+	margin-right: 16px;
+}
+
+.xlxw-details-option-1-guarantee-1 a:hover {
+	transition: all 0.5s;
+	color: #FF7300;
+	cursor: pointer;
+}
+
+.xlxw-details-option-1-guarantee-2 {
+	clear: both;
+	position: relative;
+	top: -93px;
+	left: 150px;
+	width: 490px;
+	height: 40px;
+}
+
+.xlxw-details-option-1-guarantee-2 img {
+	position: relative;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+}
+
+.xlxw-details-option-1-guarantee-2 a {
+	margin-right: 16px;
+}
+
+.xlxw-details-option-1-guarantee-2 a:hover {
+	transition: all 0.5s;
+	color: #FF7300;
+	cursor: pointer;
+}
+
+.xlxw-details-option-1-guarantee-21 {
+	font-size: 12px;
+	color: #838383;
+	position: relative;
+	top: -53px;
+	left: 20px;
+}
+
+
+/*产品介绍与评价*/
+
+.xlxw-evaluate {
+	margin-top: 20px;
+	clear: both;
+	width: 1264px;
+	overflow: hidden;
+	background-color: white;
+	padding-bottom: 20px;
+}
+
+.xlxw-evaluate-left {
+	border: solid 1px #5F9232;
+	float: left;
+	width: 290px;
+	background: white;
+	padding-bottom: 10px;
+}
+
+.xlxw-evaluate-left-title {
+	width: 290px;
+	height: 40px;
+	background: #5F9232;
+}
+
+.xlxw-evaluate-left-title h4 {
+	line-height: 40px;
+	margin-left: 10px;
+	color: white;
+}
+
+.xlxw-evaluate-left-commodity {
+	width: 270px;
+	height: 400px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.xlxw-evaluate-left-commodity hr {
+	border-width: 270px;
+	border: dashed 0.5px #D4D4D4;
+}
+
+.xlxw-evaluate-left-commodity-img {
+	margin-top: 10px;
+	margin-bottom: 12px;
+	width: 270px;
+	height: 70px;
+}
+
+.xlxw-evaluate-left-commodity-img:hover .xlxw-evaluate-left-commodity-button {
+	display: block;
+}
+
+.xlxw-evaluate-left-commodity-img span {
+	float: left;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	color: red;
+}
+
+.xlxw-evaluate-left-commodity-button {
+	display: none;
+	margin-top: 2px;
+	float: right;
+	width: 80px;
+	height: 24px;
+	background: forestgreen;
+	border-radius: 3px;
+	line-height: 24px;
+	text-align: center;
+	color: white;
+	font-size: 12px;
+}
+
+.xlxw-evaluate-left-commodity-button:hover {
+	cursor: pointer;
+}
+
+.xlxw-evaluate-left-commodity-img img {
+	margin-right: 10px;
+	float: left;
+	width: 68px;
+	height: 68px;
+	border: solid 1px #D4D4D4;
+}
+
+.xlxw-evaluate-left-commodity-img img:hover {
+	cursor: pointer;
+}
+
+.xlxw-evaluate-left-commodity-text {
+	width: 260px;
+	height: 40px;
+}
+
+.xlxw-evaluate-left-commodity-text strong {
+	font-size: 12px;
+	line-height: 20px;
+	padding-left: 10px;
+	display: block;
+	height: 40px;
+	margin-bottom: 5px;
+	font-weight: normal;
+}
+
+.xlxw-evaluate-left-commodity-text strong:hover {
+	cursor: pointer;
+	transition: all 0.7s;
+	color: #4CAF50;
+}
+
+.xlxw-evaluate-right {
+	border: solid 1px #5F9232;
+	margin-left: 20px;
+	float: left;
+	width: 950px;
+	overflow: hidden;
+}
+
+.xlxw-evaluate-right-button {
+	height: 40px;
+	width: 950px;
+	background: #5F9232;
+}
+
+.xlxw-evaluate-right button {
+	margin-right: -4px;
+	width: 150px;
+	height: 40px;
+	background-color: #94C966;
+	border: none;
+	color: white;
+	outline: none;
+}
+
+.xlxw-evaluate-right button:hover {
+	cursor: pointer;
+	background-color: white;
+	transition: all 0.7s;
+	color: black;
+}
+
+.xlxw-evaluate-right-box1 {
+	background: no-repeat center center;
+	/*设置长度和宽度和背景颜色*/
+	width: 950px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	/*用来保证黄色的div在最上面*/
+	z-index: 2000;
+}
+
+.xlxw-evaluate-right-box2 {
+	display: none;
+	/*设置长度和宽度和背景颜色*/
+	width: 900px;
+	height: 940px;
+	background: white;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	/*用来保证黄色的div在最下面*/
+	z-index: 1000;
+}
+
+.xlxw-evaluate-right-box2-card {
+	width: 900px;
+	height: 130px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: solid 1px #D4D4D4;
+}
+
+.xlxw-evaluate-right-box2-card-left {
+	float: left;
+	height: 130px;
+	width: 200px;
+	text-align: center;
+}
+
+.xlxw-evaluate-right-box2-card-left div {
+	width: 200px;
+	height: 43px;
+	line-height: 43px;
+	border-right: dashed 0.5px #D4D4D4;
+}
+
+.xlxw-evaluate-right-box2-card-left div:nth-child(2)>span {
+	font-size: 36px;
+	font-weight: 800;
+	color: #008842;
+}
+
+.xlxw-evaluate-right-box2-card-left div:nth-child(3)>span {
+	color: #008842;
+}
+
+.xlxw-evaluate-right-box2-card-center {
+	float: left;
+	height: 130px;
+	width: 370px;
+	text-align: center;
+	border-right: dashed 0.5px #D4D4D4;
+}
+
+.xlxw-evaluate-right-box2-card-center>ul {
+	margin-top: 36px;
+}
+
+.xlxw-evaluate-right-box2-card-center>ul>li {
+	margin: auto;
+	background: yellow;
+	height: 43px;
+	width: 140px;
+	height: 10px;
+	background: #e4e4e4;
+	margin-bottom: 15px;
+}
+
+.xlxw-evaluate-right-box2-card-center b {
+	margin-left: -40px;
+	display: block;
+	width: 35px;
+	position: absolute;
+	font-weight: normal;
+}
+
+.xlxw-evaluate-right-box2-card-center span {
+	height: 10px;
+	display: block;
+	background: #008842;
+}
+
+.xlxw-evaluate-right-box2-card-center i {
+	display: block;
+	width: 35px;
+	position: absolute;
+	margin-top: -12px;
+	margin-left: 146px;
+}
+
+.xlxw-evaluate-right-box2-card-right {
+	float: left;
+	height: 130px;
+	width: 320px;
+}
+
+.xlxw-evaluate-right-box2-card-right div {
+	width: 100px;
+	height: 26px;
+	background-color: #09964e;
+	color: white;
+	text-align: center;
+	line-height: 26px;
+	border-radius: 4px;
+	margin-left: 60px;
+	margin-top: 20px;
+}
+
+.xlxw-evaluate-right-box2-card-right div:hover {
+	cursor: pointer;
+	transition: all 0.5s;
+	background-color: #008842;
+}
+
+.xlxw-evaluate-right-box2-card-right p {
+	margin-left: 60px;
+	margin-top: 20px;
+}
+
+.xlxw-evaluate-right-box2-text {
+	width: 900px;
+	height: 900px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.xlxw-evaluate-right-box2-text>ul {
+	margin-top: 20px;
+	width: 860px;
+	height: 30px;
+	border-bottom: solid 1px #F7F7F7;
+}
+
+.xlxw-evaluate-right-box2-text li {
+	color: #777777;
+	line-height: 30px;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.xlxw-evaluate-right-box2-text li:hover {
+	cursor: pointer;
+}
+
+.xlxw-evaluate-right-box2-text-card {
+	width: 860px;
+	height: 150px;
+	margin-top: 10px;
+}
+
+.xlxw-evaluate-right-box2-text-card-left {
+	float: left;
+	height: 150px;
+	width: 150px;
+}
+
+.xlxw-evaluate-right-box2-text-card-left div {
+	text-align: center;
+	margin: auto;
+	width: 100px;
+	height: 130px;
+}
+
+.xlxw-evaluate-right-box2-text-card-left>div>img {
+	width: 100px;
+	height: 100px;
+}
+
+.xlxw-evaluate-right-box2-text-card-right {
+	float: left;
+	height: 150px;
+	width: 710px;
+}
+
+.xlxw-evaluate-right-box2-text-card-right-title {
+	width: 700px;
+	height: 30px;
+	background-color: #F7F7F7;
+	padding-left: 10px;
+	line-height: 30px;
+}
+
+.xlxw-evaluate-right-box2-text-card-right-title img {
+	height: 12px;
+	width: 12px;
+}
+
+.xlxw-evaluate-right-box2-text-card-right-body {
+	padding-left: 10px;
+	padding-top: 10px;
+	width: 700px;
+	height: 110px;
+}
+
+.time {
+	margin-left: 60px;
+	background: darkblue;
+}
+
+.pagination {
+	position: relative;
+	left: 540px;
+	top: 30px;
+}
+
+.pagination>li {
+	color: black;
+	height: 22px;
+	margin: 0 3px;
+	float: left;
+	background: white;
+	line-height: 22px;
+	border: solid 1px #CCCCCC;
+	padding: 0 7px;
+}
+
+.pagination>li:hover {
+	border: solid 1px #008842;
+	color: #008842;
+	transition: all 0.5s;
+}
+
+
+/*回到顶部*/
+
+#to_top {
+	right: 41px;
+	bottom: 30px;
+	position: fixed;
+	cursor: pointer;
+}
+
+.rocket {
+	display: block;
+}
+
+@media screen and (max-width: 1425px) {
+	.rocket {
+		display: none;
+	}
+}
+
+
+/**
+ * 
+ * ##头部搜索栏样式##
+ * 
+ * */
+
+.xlxw-search {
+	height: 50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
+/*搜索栏左边logo样式*/
+
+.xlxw-search-left h1 {
+	width: 151px;
+	height: 48px;
+	display: block;
+	background: url(../images/index/logo/logo.png) no-repeat center center;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+.xlxw-search-left h1 a {
+	margin: 0px;
+	padding: 0px;
+	width: 151px;
+	height: 48px;
+	display: block;
+	text-indent: -9999px;
+}
+
+
+/*搜索栏右边搜索框样式*/
+
+.xlxw-search-group {
+	width: 550px;
+	height: 34px;
+	border: 2px solid #AAA;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	padding: 0px 0px 0px 5px;
+	float: left;
+}
+
+.xlxw-search-group-select {
+	width: 72px;
+	height: 36px;
+	float: left;
+}
+
+.xlxw-search-group-select span {
+	width: 70px;
+	height: 34px;
+	display: block;
+	border-right: 2px solid #AAA;
+	text-align: center;
+	line-height: 34px;
+	cursor: pointer;
+}
+
+.xlxw-search-group-select:hover .xlxw-search-group-select-ul {
+	display: block;
+}
+
+.xlxw-search-group-select span i {
+	margin-left: -2px;
+}
+
+.xlxw-search-group-select-ul {
+	width: 75px;
+	height: 55px;
+	display: block;
+	background: #FFF;
+	margin-left: -7px;
+	padding: 0px;
+	margin-top: 0px;
+	border: 2px solid #AAA;
+	border-top: transparent;
+	display: none;
+	position: absolute;
+	z-index: 9999;
+}
+
+.xlxw-search-group-select-ul li {
+	list-style: none;
+	text-align: center;
+	line-height: 27.5px;
+	color: #212121;
+	cursor: pointer;
+}
+
+.xlxw-search-group-select-ul li:hover {
+	color: #4CAF50;
+}
+
+.xlxw-search-group input {
+	width: 387px;
+	height: 32px;
+	display: block;
+	outline: none;
+	border: none;
+	float: left;
+	padding-left: 10px;
+	background: #FCFCFC;
+}
+
+.xlxw-search-group button {
+	width: 82px;
+	height: 37px;
+	background: #4CAF50;
+	color: #FFF;
+	outline: none;
+	border: none;
+	float: right;
+	cursor: pointer;
+	margin-top: -2px;
+	margin-right: -2px;
+}
+
+.xlxw-search-shopping-cart {
+	width: 100px;
+	height: 34px;
+	float: left;
+	margin-left: 15px;
+	border: 2px solid #4CAF50;
+	margin-top: 7px;
+	position: relative;
+	cursor: pointer;
+}
+
+.xlxw-search-shopping-cart a {
+	width: 78px;
+	height: 34px;
+	display: block;
+	color: #4CAF50;
+	text-align: center;
+	line-height: 34px;
+	font-size: 14px;
+	text-decoration: none;
+	padding-left: 24px;
+}
+
+.xlxw-search-shopping-cart span {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url(../images/index/shopping-cart/shopping-cart.png) no-repeat center center;
+	position: absolute;
+	left: 12px;
+	top: 8px;
+}
+
+.jianjie {
+	width: 1040px;
+	height: 110px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	border-bottom: solid 1px silver;
+}
+
+.jianjie-box {
+	color: #666666;
+	line-height: 35px;
+	float: left;
+	width: 210px;
+	height: 35px;
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 20px;
+}
+
+.shichang {
+	margin-left: 100px;
+	display: block;
+	width: 80px;
+	height: 40px;
+	float: left;
+	color: #838383;
+	font-size: 12px;
+}
+
+.-- {
+	float: left;
+	border-bottom: 2px solid #4ab344;
+	width: 130px;
+	height: 1px;
+	display: inline-block;
+	position: relative;
+	top: -37px;
+	left: 420px;
+}

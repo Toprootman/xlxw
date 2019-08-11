@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<script>
+		window.AESKey = '';
+		// 判断浏览器是否支持placeholder属性
+		function isSupportPlaceholder() {
+			var input = document.createElement('input');
+			return 'placeholder' in input;
+		};
+		(function() {
+			//判断是否是IE浏览器，包括Edge浏览器
+			function IEVersion() {
+				//取得浏览器的userAgent字符串
+				var userAgent = navigator.userAgent;
+				//判断是否IE浏览器
+				var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+				if(isIE) {
+					var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+					reIE.test(userAgent);
+					var fIEVersion = parseFloat(RegExp["$1"]);
+					if(fIEVersion < 11 || !isSupportPlaceholder()) {
+						return true;
+					}
+				} else {
+					return false;
+				}
+			}
+
+			var tpl = ['<img style="border:none;outline:0;display:block;width:450px;height:140px;position:absolute;top:50%;left:50%;margin-left:-225px;margin-top:-70px" src="images/common/error/error.png">'].join('');
+
+			window.onload = function() {
+				if(IEVersion()) {
+					document.write(tpl);
+				}
+			};
+			window.siteName = "温馨提示";
+		})();
+	</script>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>鲜来鲜往 - 海鲜搜索</title>
+		<meta name="keywords" content="keywords">
+		<meta name="description" content="description">
+		<!--引入网站公共图标文件，默认为绿色-->
+		<link rel="shortcut icon" href="images/common/favicon/green.ico" />
+		<!--引入网站公共样式文件，默认为MDUI.CSS-->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<!--引入当前页面特有样式-->
+		<link rel="stylesheet" type="text/css" href="css/search-seafood.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css" />
+		<link rel="stylesheet" type="text/css" href="css/footer.css" />
+	</head>
+
+	<body>
+		<!--网页头部导航条开始-->
+		<div class="mdui-container-fluid xlxw-header">
+			<div class="mdui-container">
+				<div class="xlxw-header-left">
+					<i class="mdui-icon material-icons">&#xe8b4;</i>
+					<span class="xlxw-header-areatext" id="xlxw_header_areatext">北京</span>
+					<ul class="xlxw-header-areatext-ul" id="xlxw_header_areatext_ul">
+						<!--4个直辖市开始-->
+						<li>北京</li>
+						<li>上海</li>
+						<li>天津</li>
+						<li>重庆</li>
+						<!--4个直辖市结束-->
+						<!--23个省开始-->
+						<li>河北</li>
+						<li>山东</li>
+						<li>辽宁</li>
+						<li>黑龙江</li>
+						<li>吉林</li>
+						<li>甘肃</li>
+						<li>青海</li>
+						<li>河南</li>
+						<li>江苏</li>
+						<li>湖北</li>
+						<li>湖南</li>
+						<li>江西</li>
+						<li>浙江</li>
+						<li>广东</li>
+						<li>云南</li>
+						<li>福建</li>
+						<li>台湾</li>
+						<li>海南</li>
+						<li>山西</li>
+						<li>四川</li>
+						<li>陕西</li>
+						<li>贵州</li>
+						<li>安徽</li>
+						<!--23个省结束-->
+					</ul>
+				</div>
+				<div class="xlxw-headerbar-right">
+					<ul>
+						<li>
+							<a href="login.html"><span class="xlxw-fruits-color">您好，请登录</span></a>
+						</li>
+						<li>
+							<a href="register.html">免费注册</a>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li>
+							<a href="collection.html">我的收藏</a>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li>
+							<a href="footprint.html">我的足迹</a>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-buyer">
+							<a href="login.html">我是采购商<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-buyer-ul">
+								<li>
+									<a href="login.html">我的优惠</a>
+								</li>
+								<li>
+									<a href="login.html">发布需求</a>
+								</li>
+								<li>
+									<a href="login.html">采购订单</a>
+								</li>
+								<li>
+									<a href="login.html">采购计划</a>
+								</li>
+								<li>
+									<a href="login.html">查询均价</a>
+								</li>
+							</ul>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-seller">
+							<a href="login.html">我是供应商<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-seller-ul">
+								<li>
+									<a href="login.html">我的店铺</a>
+								</li>
+								<li>
+									<a href="login.html">需求中心</a>
+								</li>
+								<li>
+									<a href="login.html">免费开店</a>
+								</li>
+								<li>
+									<a href="login.html">店铺装修</a>
+								</li>
+								<li>
+									<a href="login.html">市场动态</a>
+								</li>
+							</ul>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-service">
+							<a href="login.html">服务中心<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-service-ul">
+								<li>
+									<a href="login.html">买家服务</a>
+								</li>
+								<li>
+									<a href="login.html">卖家服务</a>
+								</li>
+								<li>
+									<a href="login.html">打假举报</a>
+								</li>
+								<li>
+									<a href="login.html">侵权投诉</a>
+								</li>
+							</ul>
+						</li>
+						<li class="xlxw-headerbar-spacer"></li>
+						<li class="xlxw-headerbar-webnav">
+							<a href="">网站导航<i class="mdui-icon material-icons">&#xe5cf;</i></a>
+							<ul class="xlxw-headerbar-webnav-ul">
+								<li><span class="xlxw-fruits-color">时令水果</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-fruits.html">苹果</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">香蕉</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">桔子</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">草莓</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">火龙果</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">柠檬</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">橙子</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">西瓜</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">油桃</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">蓝莓</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">猕猴桃</a>
+										</li>
+										<li>
+											<a href="search-fruits.html">荔枝</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-vegetables-color">新鲜蔬菜</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-vegetables.html">生菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">西兰花</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">菠菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">荠菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">香菇</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">芹菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">韭菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">茼蒿</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">香菜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">芦笋</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">胡萝卜</a>
+										</li>
+										<li>
+											<a href="search-vegetables.html">尖椒</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-meat-color">肉禽蛋品</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-meat.html">猪肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">五花肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">牛肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">鸡肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">鸭肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">羊肉卷</a>
+										</li>
+										<li>
+											<a href="search-meat.html">羊肉</a>
+										</li>
+										<li>
+											<a href="search-meat.html">里脊</a>
+										</li>
+										<li>
+											<a href="search-meat.html">排骨</a>
+										</li>
+										<li>
+											<a href="search-meat.html">羊排</a>
+										</li>
+										<li>
+											<a href="search-meat.html">羊腿</a>
+										</li>
+										<li>
+											<a href="search-meat.html">火鸡</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-seafood-color">海鲜水产</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-seafood.html">带鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">三文鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">甲鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">鲈鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">红虾</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">黄鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">大闸蟹</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">生蚝</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">皮皮虾</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">金枪鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">甲鱼</a>
+										</li>
+										<li>
+											<a href="search-seafood.html">荔枝</a>
+										</li>
+									</ul>
+								</li>
+								<li><span class="xlxw-oil-color">柴米油盐</span>
+									<ul class="xlxw-headerbar-webnav-ul-subnav">
+										<li>
+											<a href="search-oil.html">苹果</a>
+										</li>
+										<li>
+											<a href="search-oil.html">香蕉</a>
+										</li>
+										<li>
+											<a href="search-oil.html">桔子</a>
+										</li>
+										<li>
+											<a href="search-oil.html">草莓</a>
+										</li>
+										<li>
+											<a href="search-oil.html">火龙果</a>
+										</li>
+										<li>
+											<a href="search-oil.html">柠檬</a>
+										</li>
+										<li>
+											<a href="search-oil.html">橙子</a>
+										</li>
+										<li>
+											<a href="search-oil.html">西瓜</a>
+										</li>
+										<li>
+											<a href="search-oil.html">油桃</a>
+										</li>
+										<li>
+											<a href="search-oil.html">蓝莓</a>
+										</li>
+										<li>
+											<a href="search-oil.html">猕猴桃</a>
+										</li>
+										<li>
+											<a href="search-oil.html">荔枝</a>
+										</li>
+									</ul>
+								</li>
+								<li class="xlxw-headerbar-webnav-ul-last">鲜来快递
+									<ul class="xlxw-headerbar-webnav-ul-express">
+										<li>
+											<a href="ftf-express.html">快递服务</a>
+											<a href="ftf-express.html">速运服务</a>
+											<a href="ftf-express.html">冷运服务</a>
+											<a href="ftf-express.html">仓储服务</a>
+											<a href="ftf-express.html">资费查询</a>
+											<a href="ftf-express.html">货物查询</a>
+										</li>
+									</ul>
+								</li>
+								<li class="xlxw-headerbar-webnav-ul-last">鲜来公益
+									<ul class="xlxw-headerbar-webnav-ul-public-welfare">
+										<li>
+											<a href="ftf-love.html">申请帮助</a>
+											<a href="ftf-love.html">鲜来众筹</a>
+											<a href="ftf-love.html">滞留代销</a>
+											<a href="ftf-love.html">清仓清场</a>
+											<a href="ftf-love.html">公益历史</a>
+											<a href="ftf-love.html">公益足迹</a>
+										</li>
+									</ul>
+								</li>
+								<li class="xlxw-headerbar-webnav-ul-last">扫码打开手机版
+									<ul class="xlxw-headerbar-webnav-ul-mobile-phone-edition">
+										<li>
+											<img src="images/index/header/mpe.png" width="79%" height="79%" />
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--网页头部导航条结束-->
+
+		<!--请在这里写代码开始...-->
+		<div class="mdui-container-fluid xlxw-bodyer">
+			<div class="mdui-container">
+				<!--网站logo开始-->
+				<div class="xlxw-logo-left">
+					<a href="index.html" class="xlxw-logo-left-a"></a>
+				</div>
+				<!--网站logo结束-->
+				<!--搜索框开始-->
+				<div class="xlxw-logo-right">
+					<div class="xlxw-logo-right-group">
+						<input type="text" class="xlxw-logo-search" value="请输入您想要的商品">
+						<input type="button" value="搜索" class="xlxw-logo-button">
+					</div>
+				</div>
+				<!--搜索框结束-->
+				<!--导航栏开始-->
+				<div class="xlxw-navigation">
+					<ul class="xlxw-navigation-main">
+						<li class="xlxw-navigation-one">全部分类</li>
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="#">闪购</a>
+						</li>
+						<li>
+							<a href="#">全球生鲜</a>
+						</li>
+						<li>
+							<a href="#">团购</a>
+						</li>
+						<li>
+							<a href="#" style="border: none;">限时优惠</a>
+						</li>
+					</ul>
+					<div class="xlxw-navigation-bottom">
+
+					</div>
+				</div>
+
+				<!--导航栏结束-->
+				<!--相关搜索开始-->
+				<div class="xlxw-search-01">
+					<span>相关搜索：</span>
+					<a href="#">贝壳</a>
+					<a href="#">鱼类</a>
+					<a href="#">虾类</a>
+				</div>
+				<!--相关搜索结束-->
+				<!--搜索选择开始-->
+				<ul class="xlxw-search-main">
+					<p class="xlxw-search-main-119">搜索到119件相关商品</p>
+					<li class="xlxw-search-brandlogo">
+						<dl>
+							<dt>品牌</dt>
+							<dd><img class="lazy" data-original="images/search-oil/577254fdN2d33894d.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/574d5bfdN606f70e2.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/579095eaNdd1dbb45.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/57b58f28Nde31874d.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/58a12801Nc62da698.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/593e2ef1Naf7ec533.jpg" /></dd>
+							<dd><img class="lazy" data-original="images/search-oil/5982bf26Nebc933d7.jpg" /></dd>
+						</dl>
+					</li>
+					<p class="xlxw-search-main-line"></p>
+					<li class="xlxw-search-types">
+						<dt>分类</dt>
+						<dd>扇贝</dd>
+						<dd>皮皮虾</dd>
+						<dd>象拔蚌</dd>
+						<dd>生蚝</dd>
+						<dd>鲍鱼</dd>
+						<dd>海参</dd>
+						<dd>其他</dd>
+					</li>
+					<p class="xlxw-search-main-line"></p>
+					<li class="xlxw-search-home"><dt>原产地</dt>
+						<dd>澳大利亚</dd>
+						<dd>中国大陆</dd>
+						<dd>美国</dd>
+						<dd>日本</dd>
+						<dd>新西兰</dd>
+						<dd>加拿大</dd>
+						<dd>其他</dd>
+					</li>
+				</ul>
+				<!--搜索选择结束-->
+				<!--主体内容开始-->
+				<div class="xlxw-search-sort-left">
+					<ul>
+						<li style="background-color: #F5F5F5;">
+							<a href="#">综合排序</a>
+						</li>
+						<li>
+							<a href="#">销量排序</a>
+						</li>
+						<li>
+							<a href="#">价格优先</a>
+						</li>
+						<li style="border: none;">
+							<a href="#">评价为主</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="xlxw-main-body">
+					<div class="xlxw-goods-left">
+						<a href="product/1535525749472.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/1/1535462625329.jpg" />
+								<h4>￥18.99/箱</h4>
+								<h5>美威 三文鱼头（大西洋鲑） 400-700g 1只</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">566+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券56-59</span>
+							</div>
+						</a>
+						<a href="product/1535525749513.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/2/1535462630124.jpg" />
+								<h4>￥11.05/箱</h4>
+								<h5>鲜佰客 智利新鲜冰冻三文鱼中段 500g（大西洋鲑） 盒装 生鱼片刺身 海鲜刺身 海鲜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">948+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券30-124</span>
+							</div>
+						</a>
+						<a href="product/1535525749560.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/3/1535462635021.jpg" />
+								<h4>￥18.77/箱</h4>
+								<h5>海购时代 智利冷冻三文鱼刺身（大西洋鲑） 500g 袋装</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">663+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券31-71</span>
+							</div>
+						</a>
+						<a href="product/1535525749603.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/4/1535462643239.jpg" />
+								<h4>￥11.1/箱</h4>
+								<h5>蓝雪 冷冻阿拉斯加狭鳕鱼片 MSC认证 400g 3片 袋装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">685+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券43-56</span>
+							</div>
+						</a>
+						<a href="product/1535525749649.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/5/1535462647815.jpg" />
+								<h4>￥16.29/箱</h4>
+								<h5>禧美 马达加斯加去脏带鱼切段 500g/袋 15-18块</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">126+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券49-145</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525749689.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/6/1535462651922.jpg" />
+								<h4>￥11.1/箱</h4>
+								<h5>品鲜肴 淡水鱼 野生花鲢头/胖头鱼头 约2250g（净膛）现杀1只4.5斤</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">260+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券19-52</span>
+							</div>
+						</a>
+						<a href="product/1535525749731.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/7/1535462653779.jpg" />
+								<h4>￥18.91/箱</h4>
+								<h5>禧美 大西洋真鳕鱼段（MSC认证） 500g/袋 3-6块 火锅食材</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">858+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券42-119</span>
+							</div>
+						</a>
+						<a href="product/1535525749769.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/8/1535462655947.jpg" />
+								<h4>￥13.62/箱</h4>
+								<h5>海名威 冷冻黄花鱼（大黄鱼） 600g 单条装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">403+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券20-55</span>
+							</div>
+						</a>
+						<a href="product/1535525749818.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/9/1535462657719.jpg" />
+								<h4>￥14.06/箱</h4>
+								<h5>海外直采 越南巴沙鱼柳（去皮无刺） BAP认证 450g 2片/袋 原装进口</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">187+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券36-61</span>
+							</div>
+						</a>
+						<a href="product/1535525749860.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/10/1535462659267.jpg" />
+								<h4>￥24.18/箱</h4>
+								<h5>美加佳 冷冻黄海小鲳鱼 300g (4-6条) 袋装 烧烤食材 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">329+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券23-114</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525749903.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/11/1535462660756.jpg" />
+								<h4>￥26.82/箱</h4>
+								<h5>海天下 冷冻法国银鳕鱼 220g 1-2片 袋装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">94+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券34-58</span>
+							</div>
+						</a>
+						<a href="product/1535525749941.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/12/1535462662396.jpg" />
+								<h4>￥25.17/箱</h4>
+								<h5>海外直采 银鳕鱼/南极犬牙鱼 (去皮去刺）原装进口 150g 宝宝辅食</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">647+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券37-132</span>
+							</div>
+						</a>
+						<a href="product/1535525749978.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/13/1535462664437.jpg" />
+								<h4>￥16.09/箱</h4>
+								<h5>鲜美来 冷冻北海带鱼北部湾带鱼段 600g 袋装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">543+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券27-111</span>
+							</div>
+						</a>
+						<a href="product/1535525750022.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/14/1535462665934.jpg" />
+								<h4>￥23.77/箱</h4>
+								<h5>美加佳 冷冻黄海小黄花鱼350g 6-8条 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">780+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券30-87</span>
+							</div>
+						</a>
+						<a href="product/1535525750061.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/15/1535462668099.jpg" />
+								<h4>￥25.42/箱</h4>
+								<h5>蓝雪 冷冻越南巴沙鱼片 ASC认证 680g 3片 袋装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">403+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券46-96</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525750104.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/16/1535462669880.jpg" />
+								<h4>￥13.81/箱</h4>
+								<h5>鲜贝客 海鲜水产 印尼进口冷冻红金枪鱼 500g/袋 刺身生鱼片 </h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">705+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券29-113</span>
+							</div>
+						</a>
+						<a href="product/1535525750148.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/17/1535462671494.jpg" />
+								<h4>￥13.68/箱</h4>
+								<h5> 大号鱿鱼干 铁板鱿鱼板 海产干货500g源自北部湾</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">51+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券14-102</span>
+							</div>
+						</a>
+						<a href="product/1535525750188.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/18/1535462673429.jpg" />
+								<h4>￥25.74/箱</h4>
+								<h5>鲜动生活 冷冻巴沙鱼柳 400g 1-2片 袋装 火锅食材 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">316+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券10-145</span>
+							</div>
+						</a>
+						<a href="product/1535525750230.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/19/1535462674996.jpg" />
+								<h4>￥16.94/箱</h4>
+								<h5>丰度 青岛活冻大黄花鱼 1kg 2条 袋装 黄鱼海鲜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">676+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券50-96</span>
+							</div>
+						</a>
+						<a href="product/1535525750275.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/20/1535462676355.jpg" />
+								<h4>￥14.76/箱</h4>
+								<h5>皇纯 威海淡干海参 5A 50g 7-10只 简装 海鲜干货</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">683+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券51-79</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525750319.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/21/1535462678009.jpg" />
+								<h4>￥24.21/箱</h4>
+								<h5>泓济湟 鱿鱼干淡晒海鲜干货海产品送礼中秋 500g</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">557+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券22-148</span>
+							</div>
+						</a>
+						<a href="product/1535525750359.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/22/1535462679761.jpg" />
+								<h4>￥21.33/箱</h4>
+								<h5>三都港 冷冻三去无公害黄花鱼 大黄鱼 700g 2条 袋装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">538+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券22-89</span>
+							</div>
+						</a>
+						<a href="product/1535525750401.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/23/1535462681407.jpg" />
+								<h4>￥12.23/箱</h4>
+								<h5>丰度 青岛冷冻鳗鱼段 500g 盒装  海鳗鱼 海鲜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">393+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券15-73</span>
+							</div>
+						</a>
+						<a href="product/1535525750445.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/24/1535462682752.jpg" />
+								<h4>￥17.57/箱</h4>
+								<h5>深态 鲽鱼阿拉斯加去头去尾1.2kg 袋装比目鱼</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">119+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券54-100</span>
+							</div>
+						</a>
+						<a href="product/1535525750492.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/25/1535462684558.jpg" />
+								<h4>￥14.47/箱</h4>
+								<h5>水巷口 冷冻无公害金鲳鱼 500g 2条 袋装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">879+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券17-55</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525750535.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/26/1535462686441.jpg" />
+								<h4>￥26.4/箱</h4>
+								<h5>三都港 日式蒲烧烤鳗鱼 180g/盒 段装 出口日本 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">701+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券30-97</span>
+							</div>
+						</a>
+						<a href="product/1535525750578.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/27/1535462688058.jpg" />
+								<h4>￥20.92/箱</h4>
+								<h5>三都港 日式蒲烧烤鳗鱼 400g/袋 1条 出口日本 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">422+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券18-118</span>
+							</div>
+						</a>
+						<a href="product/1535525750629.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/28/1535462689765.jpg" />
+								<h4>￥13.32/箱</h4>
+								<h5>Ocean Gala 冷冻阿拉斯加黄金鲽鱼 1kg 2-3条 袋装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">905+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券26-134</span>
+							</div>
+						</a>
+						<a href="product/1535525750669.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/29/1535462691776.jpg" />
+								<h4>￥13.02/箱</h4>
+								<h5>翔泰 冷冻二去金鲳鱼  BAP认证（去鳃去内脏） 420g/袋 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">675+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券38-111</span>
+							</div>
+						</a>
+						<a href="product/1535525750706.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/30/1535462693265.jpg" />
+								<h4>￥25.89/箱</h4>
+								<h5>海外直采 泰国无添加虾仁（特大号） 340g /袋 21-30 只 原装进口</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">88+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券23-115</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525750749.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/31/1535462694967.jpg" />
+								<h4>￥12.15/箱</h4>
+								<h5>丰度 加拿大冷冻红金枪鱼刺身 250g 袋装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">882+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券31-120</span>
+							</div>
+						</a>
+						<a href="product/1535525750792.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/32/1535462696356.jpg" />
+								<h4>￥23.43/箱</h4>
+								<h5>禧美 熟冻加拿大北极甜虾（MSC认证） 500g/袋 65-85只</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">366+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券38-75</span>
+							</div>
+						</a>
+						<a href="product/1535525750844.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/33/1535462699197.jpg" />
+								<h4>￥16.75/箱</h4>
+								<h5>海外直采 泰国活冻白虾/女王虾（大号） 400g 16-20只/盒 原装进口</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">341+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券42-113</span>
+							</div>
+						</a>
+						<a href="product/1535525750883.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/34/1535462701141.jpg" />
+								<h4>￥29.25/箱</h4>
+								<h5>仙泉湖 冷冻生态大头鱼鱼头半边 600g（CNAS认证） 配剁椒料 盒装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">96+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券49-134</span>
+							</div>
+						</a>
+						<a href="product/1535525750931.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/35/1535462704718.jpg" />
+								<h4>￥28.93/箱</h4>
+								<h5>聚福鲜 日式蒲烧鳗鱼 300g 1条 袋装 海鲜年货 </h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">729+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券12-143</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525750969.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/36/1535462706854.jpg" />
+								<h4>￥24.8/箱</h4>
+								<h5>海名威 冷冻格陵兰比目鱼 400g 4-5片 袋装 火锅食材 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">238+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券14-55</span>
+							</div>
+						</a>
+						<a href="product/1535525751023.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/37/1535462708415.jpg" />
+								<h4>￥20.42/箱</h4>
+								<h5>【冰鲜】舟山海鲈鱼 600g 1条 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">432+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券22-141</span>
+							</div>
+						</a>
+						<a href="product/1535525751064.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/38/1535462722005.jpg" />
+								<h4>￥23.52/箱</h4>
+								<h5>海买 野生阿根廷L2红虾2kg/盒 原装进口大虾40-50只 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">53+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券45-51</span>
+							</div>
+						</a>
+						<a href="product/1535525751104.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/39/1535462723776.jpg" />
+								<h4>￥11.69/箱</h4>
+								<h5>鲜之国 青岛鲜活皮皮虾 500克 16-20只 新鲜野生虾虎琵琶虾虾姑 火锅食材 公的不带籽</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">638+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券52-96</span>
+							</div>
+						</a>
+						<a href="product/1535525751142.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/40/1535462726005.jpg" />
+								<h4>￥19.29/箱</h4>
+								<h5>海外直采 泰国活冻黑虎虾（特大号） 850g 17-26只/盒 原装进口</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">333+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券31-142</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525751193.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/41/1535462728007.jpg" />
+								<h4>￥12.33/箱</h4>
+								<h5>骤到 冰鲜舟山竹节虾 袋装 斑节虾 500g 10-15头</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">555+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券17-55</span>
+							</div>
+						</a>
+						<a href="product/1535525751238.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/42/1535462730729.jpg" />
+								<h4>￥29.15/箱</h4>
+								<h5>美加佳 冷冻加拿大去壳甜虾70g 虾仁 日料刺身 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">562+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券51-53</span>
+							</div>
+						</a>
+						<a href="product/1535525751278.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/43/1535462733483.jpg" />
+								<h4>￥13.88/箱</h4>
+								<h5>聚天鲜 厄瓜多尔白虾(大号)净重3.4斤南美大虾对虾60-80只</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">715+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券55-123</span>
+							</div>
+						</a>
+						<a href="product/1535525751319.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/44/1535462735241.jpg" />
+								<h4>￥29.49/箱</h4>
+								<h5>海外直采 泰国活冻白虾/女王虾（大号） 400g 16-20只/盒 原装进口</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">744+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券34-102</span>
+							</div>
+						</a>
+						<a href="product/1535525751363.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/45/1535462737527.jpg" />
+								<h4>￥13.7/箱</h4>
+								<h5>蓝雪 冷冻阿根廷红虾 L2 500g 10-15只 盒装 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">456+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券56-61</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525751407.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/46/1535462739166.jpg" />
+								<h4>￥16.11/箱</h4>
+								<h5>yuepw 浙江舟山冰冻海鲈鱼 600-700g 1条 袋装 生鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">539+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券59-80</span>
+							</div>
+						</a>
+						<a href="product/1535525751447.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/47/1535462741752.jpg" />
+								<h4>￥27.98/箱</h4>
+								<h5>海外直采 泰国活冻黑虎虾（大号） 400g 16-20只/盒 原装进口</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">475+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券13-58</span>
+							</div>
+						</a>
+						<a href="product/1535525751490.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/48/1535462743910.jpg" />
+								<h4>￥14.72/箱</h4>
+								<h5>国联  熟冻香辣皮皮虾 150g 盒装 解冻即食</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">567+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券55-106</span>
+							</div>
+						</a>
+						<a href="product/1535525751539.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/49/1535462746557.jpg" />
+								<h4>￥13.38/箱</h4>
+								<h5>【活鲜】聚福鲜 鲜活红毛蟹 进口海鲜大螃蟹 800-900g 1只</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">1008+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券22-91</span>
+							</div>
+						</a>
+						<a href="product/1535525751591.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/50/1535462751332.jpg" />
+								<h4>￥17.62/箱</h4>
+								<h5>沈志雄 东山岛海鲜野生大斑节虾竹节虾明虾基围虾 400g/4-6条/盒 2盒 共净重800g 2-4条/盒</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">43+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券35-104</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525751631.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/51/1535462753976.jpg" />
+								<h4>￥10.98/箱</h4>
+								<h5>国联 翡翠生虾仁（BAP认证） 1kg/袋 156-198只 海鲜</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">450+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券55-71</span>
+							</div>
+						</a>
+						<a href="product/1535525751677.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/52/1535462756107.jpg" />
+								<h4>￥19.1/箱</h4>
+								<h5>国联 原装进口厄瓜多尔白虾（ASC认证） 大号 1.8kg 72-90只 盒装 大虾 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">402+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券59-94</span>
+							</div>
+						</a>
+						<a href="product/1535525751716.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/53/1535462758184.jpg" />
+								<h4>￥14.75/箱</h4>
+								<h5>海外直采 泰国无添加虾仁 （大号）340g/袋 44-55只 原装进口</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">223+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券27-76</span>
+							</div>
+						</a>
+						<a href="product/1535525751755.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/54/1535462761300.jpg" />
+								<h4>￥28.35/箱</h4>
+								<h5>【活鲜】御鲜轩 进口鲜活红毛蟹 海鲜螃蟹 750-800g</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">175+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券12-55</span>
+							</div>
+						</a>
+						<a href="product/1535525751810.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/55/1535462764375.jpg" />
+								<h4>￥19.03/箱</h4>
+								<h5>【活鲜】鲜活鲍鱼 500g 10-12头 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">827+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券48-73</span>
+							</div>
+						</a>
+					</div>
+					<div class="xlxw-goods-left">
+						<a href="product/1535525751848.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/56/1535462767327.jpg" />
+								<h4>￥29.19/箱</h4>
+								<h5>禧美 熟冻加拿大北极甜虾 无黑头（MSC认证） 500g/袋 50-60只</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">989+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券56-100</span>
+							</div>
+						</a>
+						<a href="product/1535525751890.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/57/1535462778458.jpg" />
+								<h4>￥24.85/箱</h4>
+								<h5>【活鲜】加拿大进口鲜活象拔蚌 刺身火锅食材 规格3.0-3.5斤/1只</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">823+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券32-124</span>
+							</div>
+						</a>
+						<a href="product/1535525751933.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/58/1535462782300.jpg" />
+								<h4>￥21.78/箱</h4>
+								<h5>美加佳 冷冻皮皮虾肉 200g 皮皮虾 净虾肉 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">777+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券59-58</span>
+							</div>
+						</a>
+						<a href="product/1535525751980.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/59/1535462785335.jpg" />
+								<h4>￥26.02/箱</h4>
+								<h5>鲜玛特 大红毛蟹 鲜活500g（1-3斤/只可选）进口野生鲜活海鲜水产 1斤/只</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">592+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券25-58</span>
+							</div>
+						</a>
+						<a href="product/1535525752027.html">
+							<div class="xlxw-goods-card">
+								<img width="220px" height="220px" class="lazy" data-original="images/product/seafood/60/1535462793362.jpg" />
+								<h4>￥22.3/箱</h4>
+								<h5>鸥米茄 冷冻鲍鱼 500g 10粒 袋装 火锅食材 海鲜水产</h5>
+								<a href="#"><span class="xlxw-goods-card-infor"><font style="color: #BF360C; font-weight: 700;">172+ </font> 条评价</span></a><br />
+								<a href="commodity-shops.html">容塘水果旗舰店</a><img class="lazy" data-original="images/search-fruits/zixun.png" /><br />
+								<span class="xlxw-card-img01">自营</span>
+								<span class="xlxw-card-img02">定期</span>
+								<span class="xlxw-card-img03">鲜来检测	</span>
+								<span class="xlxw-card-img04">满赠</span>
+								<span class="xlxw-card-img05">券31-107</span>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<!--页码选择开始-->
+				<div class="xlxw-search-ul ">
+					<ul>
+						<li>»</li>
+						<li>12</li>
+						<li>11</li>
+						<li>10</li>
+						<li>9</li>
+						<li>8</li>
+						<li>7</li>
+						<li>6</li>
+						<li>5</li>
+						<li>4</li>
+						<li>3</li>
+						<li>2</li>
+						<li style="background-color: #56B1E8; color: white; ">1</li>
+						<li>
+							«</li>
+					</ul>
+				</div>
+				<!--页码选择结束-->
+				<!--主体内容结束-->
+			</div>
+		</div>
+
+		<!--请在这里写代码结束...-->
+
+		<!--网页底部信息开始-->
+		<div class="mdui-container-fluid xlxw-footer">
+			<div class="mdui-container">
+				<!--底部图标导航栏开始-->
+				<ul class="xlxw-footer-icons">
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item1"></i>
+							<h3>食品安全</h3>
+							<p>精选生鲜 严格质检</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item2"></i>
+							<h3>全程冷链</h3>
+							<p>自营物流 安全可控</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item3"></i>
+							<h3>源头直采</h3>
+							<p>绿色生态 鲜活天然</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item4"></i>
+							<h3>产地直销</h3>
+							<p>价格便宜 天天优惠</p>
+						</div>
+					</li>
+					<li>
+						<div class="xlxw-footer-icons-item"><i class="item5"></i>
+							<h3>售后无忧</h3>
+							<p>在线客服 疑难解惑</p>
+						</div>
+					</li>
+				</ul>
+				<!--底部图标导航栏结束-->
+
+				<!--底部分割线开始-->
+				<div class="xlxw-divider-light"></div>
+				<!--底部分割线结束-->
+
+				<!--底部链接导航开始-->
+				<div class="xlxw-footer-link">
+					<div class="xlxw-footer-link-left">
+						<div class="xlxw-footer-link-left-item">
+							<div><img class="lazy" data-original="images/index/wechat-png/微信服务号.png" /> <span></span></div>
+							<p>鲜来鲜往微信服务号</p>
+						</div>
+						<div class="xlxw-footer-link-left-item">
+							<div><img class="lazy" data-original="images/index/wechat-png/微信订阅号.png" /> <span></span></div>
+							<p>鲜来鲜往微信订阅号</p>
+						</div>
+					</div>
+					<div class="xlxw-footer-link-right">
+						<ul class="xlxw-footer-link-right-item">
+							<li>新手指导</li>
+							<li>
+								<a href="register.html">账户注册</a>
+							</li>
+							<li>
+								<a href="login.html">购物流程</a>
+							</li>
+							<li>
+								<a href="login.html">支付方式</a>
+							</li>
+							<li>
+								<a href="login.html">售后服务</a>
+							</li>
+						</ul>
+						<ul class="xlxw-footer-link-right-item">
+							<li>商家服务</li>
+							<li>
+								<a href="login.html">平台规则</a>
+							</li>
+							<li>
+								<a href="login.html">商家入驻</a>
+							</li>
+							<li>
+								<a href="login.html">免费培训</a>
+							</li>
+							<li>
+								<a href="login.html">鲜来资讯</a>
+							</li>
+						</ul>
+						<ul class="xlxw-footer-link-right-item">
+							<li>鲜来配送</li>
+							<li>
+								<a href="ftf-express.html">配送方式</a>
+							</li>
+							<li>
+								<a href="ftf-express.html">配送运费</a>
+							</li>
+							<li>
+								<a href="ftf-express.html">配送范围</a>
+							</li>
+							<li>
+								<a href="ftf-express.html">配送时间</a>
+							</li>
+						</ul>
+						<ul class="xlxw-footer-link-right-item">
+							<li>鲜来公益</li>
+							<li>
+								<a href="ftf-love.html">申请帮扶</a>
+							</li>
+							<li>
+								<a href="ftf-love.html">鲜来众筹</a>
+							</li>
+							<li>
+								<a href="ftf-love.html">滞销代销</a>
+							</li>
+							<li>
+								<a href="ftf-love.html">清仓清场</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--底部链接导航结束-->
+
+				<!--底部版权注释开始-->
+				<div class="xlxw-footer-copyright">
+					<p>Copyright&nbsp;&nbsp;©&nbsp;&nbsp;2017-2018 Fresh To Fresh-Inc.All Rights Reserved</p>
+				</div>
+				<!--底部版权注释结束-->
+			</div>
+		</div>
+		<!--网页底部信息结束-->
+	</body>
+
+	<!--引入JQuery文件-->
+	<script src="scripts/jquery-1.12.4.min.js " type="text/javascript " charset="utf-8 "></script>
+	<!--引入MDUI.JQ文件-->
+	<script src="scripts/common.js " type="text/javascript " charset="utf-8 "></script>
+	<!--初始化所有组件-->
+	<script type="text/javascript ">
+		mdui.mutation();
+	</script>
+	<!--引入懒加载JS-->
+	<script src="scripts/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("img.lazy").lazyload({
+			effect: 'fadeIn',
+			placeholder: 'images/common/loading/loading.png'
+		});
+	</script>
+	<!--初始化函数-->
+	<script type="text/javascript">
+		/*获取任意标签的内容*/
+		function getInnerText(element) {
+			if(typeof element.textContent == "undefined") {
+				return element.innerText;
+			} else {
+				return element.textContent;
+			}
+		}
+
+		/*设置任意标签的内容*/
+		function setInnerText(element, text) {
+			if(typeof element.textContent == "undefined") {
+				return element.innerText = text;
+			} else {
+				return element.textContent = text;
+			}
+		}
+
+		/*地区选择*/
+		(function() {
+			var xlxw_header_areatext = document.getElementById("xlxw_header_areatext");
+			var xlxw_header_areatext_list = document.getElementById("xlxw_header_areatext_ul").getElementsByTagName("li");
+			//循环注册点击事件
+			for(var i = 0; i < xlxw_header_areatext_list.length; i++) {
+				xlxw_header_areatext_list[i].onclick = function() {
+					setInnerText(xlxw_header_areatext, getInnerText(this));
+				};
+			}
+		})();
+	</script>
+
+</html>

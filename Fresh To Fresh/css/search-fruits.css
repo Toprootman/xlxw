@@ -1,0 +1,448 @@
+@charset "utf-8";
+
+/*!
+ * 
+ * < 鲜来鲜往 - 水果搜索页 >
+ * 
+ * @author:杨镇豪;
+ * @since:3.0;
+ * 
+ * */
+
+
+/*全局变量样式*/
+
+body {
+	min-width: 1280px !important;
+	background-color: #F3F3F3 !important;
+	color: #222 !important;
+	font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", sans-serif;
+}
+
+.mdui-container {
+	min-width: 1280px !important;
+}
+
+
+/*通用格式*/
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: arial, "Lantinghei SC", "Microsoft Yahei";
+}
+
+ul,
+li,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+/*特有样式*/
+
+.xlxw-logo-left {
+	width: 20%;
+	height: 105px;
+	background: url(../images/common/logo/fruits.png) no-repeat center;
+	float: left;
+	position: relative;
+}
+
+.xlxw-logo-left-a {
+	width: 192px;
+	height: 50px;
+	display: block;
+	left: 31px;
+	top: 27px;
+	position: absolute;
+}
+
+.xlxw-logo-right {
+	width: 80%;
+	height: 105px;
+	float: left;
+}
+
+.xlxw-logo-right-group {
+	width: 770px;
+	height: 72px;
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+.xlxw-logo-search {
+	margin-left: 200px;
+	margin-top: 30px;
+	width: 450px;
+	height: 40px;
+	border: solid 1px #31BA6A;
+	color: #Ccc;
+	outline: none;
+	padding-left: 13px;
+	letter-spacing: 1px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.xlxw-logo-button {
+	width: 100px;
+	height: 42px;
+	background-color: #31BA6A;
+	color: white;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	letter-spacing: 3px;
+	font-size: 17px;
+	position: absolute;
+	left: 664px;
+	top: 30px;
+}
+
+.xlxw-logo-button:hover {
+	background-color: #00C853;
+	color: #E3F2FD;
+}
+
+.xlxw-navigation-main li {
+	float: left;
+	padding-top: 7.5px;
+	padding-bottom: 7.5px;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+.xlxw-navigation-main li a {
+	padding-left: 20px;
+	padding-right: 20px;
+	border-right: 1px solid #D7CCC8;
+}
+
+.xlxw-navigation-main li:hover {
+	background-color: #31BA6A;
+}
+
+.xlxw-navigation-main li a:hover {
+	color: white;
+	background-color: #31BA6A;
+}
+
+.xlxw-navigation-one {
+	margin-left: 31px;
+	text-align: center;
+	color: white;
+	font-weight: 100;
+	width: 160px;
+	background-color: #31BA6A;
+}
+
+.xlxw-navigation-bottom {
+	float: left;
+	width: 100%;
+	height: 3px;
+	background-color: #31BA6A;
+}
+
+.xlxw-search-01 {
+	margin-top: 5px;
+	margin-bottom: 8px;
+	margin-left: 31px;
+	float: left;
+}
+
+.xlxw-search-01 a:hover {
+	color: #31BA6A;
+}
+
+.xlxw-search-main {
+	box-shadow: 0px 0px 2px #999;
+	float: left;
+	width: 100%;
+	height: 192px;
+}
+
+.xlxw-search-main-119 {
+	width: 95%;
+	margin-left: 31px;
+	margin-top: 6px;
+	padding-bottom: 6px;
+	border-bottom: dashed #999 1px;
+}
+
+.xlxw-search-main-line {
+	float: left;
+	width: 95%;
+	margin-left: 31px;
+	padding-bottom: 8px;
+	border-bottom: dashed #999 1px;
+}
+
+.xlxw-search-brandlogo {
+	margin-top: 8px;
+}
+
+.xlxw-search-brandlogo dt {
+	float: left;
+	width: 100px;
+	height: 48px;
+	color: #666666;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+	margin-left: 31px;
+	line-height: 48px;
+}
+
+.xlxw-search-brandlogo img {
+	border: solid 1px #F3F3F3;
+	cursor: pointer;
+	margin-left: 25px;
+	float: left;
+	width: 116px;
+	height: 48px;
+}
+
+.xlxw-search-brandlogo img:hover {
+	border-color: #4CAF50;
+}
+
+.xlxw-search-types dt {
+	float: left;
+	width: 100px;
+	height: 30px;
+	color: #666666;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+	margin-left: 31px;
+	line-height: 30px;
+	margin-top: 7px;
+}
+
+.xlxw-search-types dd {
+	margin-left: 35px;
+	text-align: center;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	cursor: pointer;
+	margin-top: 7px;
+}
+
+.xlxw-search-types dd:hover {
+	color: #FFFFFF;
+	background-color: #31BA6A;
+	border-radius: 3px;
+}
+
+.xlxw-search-home dt {
+	float: left;
+	width: 100px;
+	height: 30px;
+	color: #666666;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+	margin-left: 31px;
+	line-height: 30px;
+	margin-top: 7px;
+}
+
+.xlxw-search-home dd {
+	margin-left: 25px;
+	text-align: center;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	cursor: pointer;
+	margin-top: 7px;
+}
+
+.xlxw-search-home dd:hover {
+	color: #FFFFFF;
+	background-color: #31BA6A;
+	border-radius: 3px;
+}
+
+.xlxw-search-sort-left {
+	margin-top: 10px;
+	float: left;
+	width: 1263px;
+	height: 35px;
+	border: solid 1px #CCCCCC;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.xlxw-search-sort-left ul li {
+	border-right: dashed 1px #CCCCCC !important;
+	padding-left: 31px;
+	padding-right: 18px;
+	width: 70px;
+	line-height: 35px;
+	float: left;
+}
+
+.xlxw-search-sort-left ul li a:hover {
+	color: #00C853;
+}
+
+.xlxw-search-sort-right a:hover {
+	background-color: #00C853;
+	color: white;
+}
+
+.xlxw-main-body {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-top: 12px;
+}
+
+.xlxw-goods-card {
+	float: left;
+	padding-top: 10px;
+	padding-left: 12px;
+	border: solid 1px #E8E8E8;
+	width: 18.5%;
+	height: 380px;
+	margin-right: 4.5px;
+	margin-bottom: 10px;
+	background-color: white;
+	z-index: 9999;
+	cursor: pointer;
+	position: relative;
+}
+
+.xlxw-goods-card:hover {
+	border: solid 1px #CFD8DC;
+	box-shadow: 0px 5px 5px #C5CAE9;
+	border: 1px solid #31BA6A;
+}
+
+.xlxw-goods-card h4 {
+	margin-top: 3px;
+	margin-left: 3px;
+	font-size: 22px;
+	color: #e4393c;
+}
+
+.xlxw-goods-card h5 {
+	width: 95%;
+	height: 35px;
+	margin-top: 6px;
+	margin-left: 3px;
+	font-size: 12px;
+	color: #4C4C4C;
+	overflow: hidden;
+}
+
+.xlxw-goods-card-infor {
+	position: absolute;
+	top: 319px;
+}
+
+.xlxw-goods-card a {
+	margin-left: 3px;
+	font-size: 13px;
+	color: #CCCCCC;
+	margin-top: 8px;
+}
+
+.xlxw-goods-card img {
+	position: relative;
+	top: 6px;
+	z-index: 0;
+}
+
+.xlxw-card-img01 {
+	color: white;
+	font-size: 12px;
+	background-color: #e23a3a;
+	margin-right: 2px;
+	padding: 1px;
+	padding-left: 3px;
+	border-radius: 3px;
+}
+
+.xlxw-card-img02 {
+	color: white;
+	font-size: 12px;
+	background-color: #fe901d;
+	margin-right: 2px;
+	padding: 1px;
+	padding-left: 3px;
+	border-radius: 3px;
+}
+
+.xlxw-card-img03 {
+	color: white;
+	font-size: 12px;
+	background-color: #26cb15;
+	padding: 1px;
+	padding-left: 3px;
+	z-index: 100;
+	border-radius: 3px;
+}
+
+.xlxw-card-img04 {
+	color: #e23a3a;
+	border: solid 1px #e23a3a;
+	font-size: 12px;
+	margin-right: 2px;
+	padding: 1px;
+	padding-left: 3px;
+	border-radius: 3px;
+	margin-left: 2px;
+}
+
+.xlxw-card-img05 {
+	color: #e23a3a;
+	border: solid 1px #e23a3a;
+	font-size: 12px;
+	margin-right: 2px;
+	padding: 1px;
+	padding-left: 3px;
+	border-radius: 3px;
+}
+
+.xlxw-search-ul {
+	margin-top: 25px;
+	padding-bottom: 25px;
+	width: 100%;
+	height: 35px;
+	float: left;
+	position: relative;
+	left: -300px;
+}
+
+.xlxw-search-ul li {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 10px;
+	float: right;
+	text-align: center;
+	font-size: 12px;
+	border: 1px solid #D6D6D6;
+	cursor: pointer;
+}
+
+.xlxw-search-ul li:hover {
+	color: white;
+	background-color: lightgreen;
+}

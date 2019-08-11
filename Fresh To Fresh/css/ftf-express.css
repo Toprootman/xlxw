@@ -1,0 +1,499 @@
+@charset "utf-8";
+
+/*!
+ * 
+ * < 鲜来鲜往 - 鲜来快递 >
+ * 
+ * @author:葛彤彤;
+ * @since:3.0;
+ * 
+ * */
+
+
+/*全局变量样式*/
+
+body {
+	min-width: 1280px !important;
+	background-color: #F3F3F3 !important;
+	color: #222 !important;
+	font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", sans-serif;
+}
+
+.mdui-container {
+	min-width: 1280px !important;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 1280px;
+	color: #212121;
+	font-size: 14px;
+	background-color: #F9F9F9;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+.mdui-container {
+	min-width: 1280px !important;
+}
+
+.xlxw-body {
+	width: 1280px;
+}
+
+
+/*头部开始*/
+
+.xlxw-expresss-head {
+	width: 1260px;
+	height: 90px;
+	background: white;
+}
+
+.xlxw-expresss-head>.xlxw-expresss-head-one {
+	list-style: none;
+	height: 90px;
+}
+
+.xlxw-expresss-head>.xlxw-expresss-head-one>li {
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 18px;
+	float: left;
+	margin-left: 50px;
+	height: 90px;
+	width: 120px;
+	line-height: 90px;
+	text-align: center;
+	letter-spacing: 3px;
+}
+
+.xlxw-expresss-head>.xlxw-expresss-head-one>li>a {
+	color: black;
+	text-decoration: none;
+}
+
+.xlxw-expresss-head>.xlxw-expresss-head-one>li>a:hover {
+	color: #56B1E8;
+	transition: all 0.5s;
+}
+
+.xlxw-expresss-head>.xlxw-expresss-head-one>li>.xlxw-expresss-head-two {
+	background-color: #FFFFFF;
+	display: none;
+	position: absolute;
+	z-index: 999;
+	text-align: center;
+	width: 120px;
+	line-height: 45px !important;
+	transition: all .5s;
+	margin-left: -12px;
+}
+
+.xlxw-expresss-head>.xlxw-expresss-head-one>li>.xlxw-expresss-head-two a {
+	color: black;
+	text-decoration: none;
+}
+
+.xlxw-expresss-head>.xlxw-expresss-head-one>li>.xlxw-expresss-head-two a:hover {
+	color: #56B1E8;
+	text-decoration: underline;
+}
+
+.xlxw-expresss-head>.xlxw-expresss-head-one>li:hover .xlxw-expresss-head-two {
+	display: block;
+}
+
+.xlxw-expresss-logo {
+	width: 192px !important;
+	height: 50px !important;
+	display: block !important;
+	background: url(../images/common/logo/express.png) no-repeat center center !important;
+	margin-top: 20px;
+}
+
+
+/*头部结束*/
+
+
+/*body开始*/
+
+.xlxw-expresss-body {
+	width: 1260px;
+	height: 100%;
+	background: #EFF7F7;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/*banner开始*/
+
+.xlxw-expresss-body-banner {
+	width: 1260px;
+	height: 322px;
+}
+
+.xlxw-expresss-body-banner>img {
+	width: 1240px;
+	position: relative;
+}
+
+
+/*banner结束*/
+
+
+/*客户服务开始*/
+
+.xlxw-expresss-body-service {
+	color: #306DAB;
+	margin-top: 80px;
+}
+
+.xlxw-expresss-body-service-word {
+	font-size: 30px;
+	text-align: center;
+}
+
+.xlxw-expresss-body-service-line {
+	margin-left: 585px;
+}
+
+.xlxw-expresss-body-service ul {
+	margin-top: 50px;
+	height: 300px;
+}
+
+.xlxw-expresss-body-service>ul>li {
+	border: solid;
+	width: 280px;
+	height: 300px;
+	float: left;
+	margin-left: 20px;
+	transition: all 0.78s;
+	cursor: pointer;
+}
+
+.xlxw-expresss-body-service>ul>li:hover {
+	background-color: #306DAB;
+	transform: scale(1.15);
+	color: #F6F6F6;
+}
+
+.xlxw-expresss-body-service>ul>li>img {
+	margin-top: 30px;
+	margin-left: 100px;
+	margin-bottom: 20px;
+}
+
+.xlxw-expresss-body-service>ul>li>.xlxw-expresss-body-service-word2 {
+	font-size: 25px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.xlxw-expresss-body-service>ul>li>p>a {
+	text-decoration: none;
+}
+
+.xlxw-expresss-body-service>ul>li>p>a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.xlxw-expresss-body-service>ul>li>.xlxw-expresss-body-service-word3 {
+	color: grey;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.xlxw-expresss-body-service>ul>li:hover .xlxw-expresss-body-service-word2-a {
+	color: white !important;
+}
+
+
+/*客户服务结束*/
+
+.xlxw-expresss-body-dispatching-box {
+	width: 100%;
+	height: 430px;
+	background: #EFF7F7;
+}
+
+.xlxw-expresss-body-dispatching {
+	margin: -20px auto;
+	background-color: #D6F5F5;
+	width: 1040px;
+	height: 300px;
+}
+
+.xlxw-expresss-body-dispatching>h2 {
+	padding-top: 20px;
+	text-align: center;
+}
+
+.xlxw-expresss-body-dispatching>div:nth-child(2) {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 28px;
+	color: #64A29C;
+}
+
+.xlxw-expresss-body-dispatching>p {
+	padding-left: 100px;
+	padding-right: 100px;
+	margin-top: 20px;
+	text-align: left;
+	color: #64A29C;
+	font-size: 16px;
+}
+
+.xlxw-expresss-body-dispatching>div:nth-child(4) {
+	position: relative;
+	top: 30px;
+	margin: auto;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 3px;
+	width: 120px;
+	height: 40px;
+	color: white;
+	background-color: #64A29C;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.xlxw-expresss-body-introduce {
+	margin: auto;
+	width: 100%;
+	height: 800px;
+	background: #EFF7F7;
+}
+
+.xlxw-expresss-body-introduce-one {
+	padding-left: 60px;
+	padding-right: 58px;
+	padding-top: 30px;
+	float: left;
+	text-align: center;
+	width: 300px;
+	height: 340px;
+	margin-left: 90px;
+	margin-top: 60px;
+}
+
+.xlxw-expresss-body-introduce-one>h3 {
+	color: #64A29C;
+}
+
+.xlxw-expresss-body-introduce-one>p {
+	margin-top: 6px;
+	color: #64A29C;
+	text-align: left;
+}
+
+
+/*底部开始*/
+
+.xlxw-expresss-body-bottom {
+	width: 1280px;
+	height: 500px;
+	background-color: #EAEAEA;
+	margin: 0px auto;
+}
+
+.xlxw-expresss-body-bottom ul {
+	width: 200px;
+	float: left;
+	margin-left: 90px;
+	margin-top: 50px;
+	margin-bottom: 60px;
+}
+
+.xlxw-expresss-body-bottom>ul>li {
+	width: 200px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.xlxw-expresss-body-bottom>ul>li:nth-child(1) {
+	font-size: 20px;
+}
+
+.xlxw-expresss-body-bottom>ul>li>a {
+	color: black
+}
+
+.xlxw-expresss-body-bottom>ul>li>a:hover {
+	color: blue;
+}
+
+.xlxw-expresss-body-bottom-word {
+	width: 300px;
+	height: 50px;
+	text-align: center;
+	margin-left: 500px;
+}
+
+
+/*底部结束*/
+
+
+/*新闻开始*/
+
+.xlxw-expresss-body-news {
+	clear: both;
+	width: 96%;
+	height: 570px;
+	margin-left: 2%;
+	padding-top: 80px;
+}
+
+.xlxw-expresss-body-news-word {
+	font-size: 30px;
+	text-align: center;
+	color: #306DAB;
+}
+
+.xlxw-expresss-body-news-line {
+	margin-left: 90px;
+}
+
+.xlxw-expresss-body-news-left {
+	width: 40%;
+	height: 300px;
+	position: relative;
+	margin-top: 80px;
+	float: left;
+}
+
+.xlxw-expresss-body-news-left img {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*.xlxw-expresss-body-news-left img:hover{
+	opacity:0.4;
+	filter:alpha(opacity=40); 
+/*}*/
+
+
+/*透明*/
+
+.xlxw-expresss-body-news-left .tips {
+	position: absolute;
+	right: 50px;
+	top: 255px;
+}
+
+.xlxw-expresss-body-news-left .tips i {
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #2f889a;
+	border-radius: 50%;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	font-style: normal;
+	z-index: 9;
+}
+
+.xlxw-expresss-body-news-left .tips .text {
+	position: absolute;
+	bottom: 0;
+	right: 5px;
+	width: 0;
+	padding: 5px 0;
+	overflow: hidden;
+	background: #2f889a;
+	border-radius: 10px;
+	line-height: 10px;
+	text-align: center;
+	font-size: 10px;
+	color: #fff;
+	white-space: nowrap;
+}
+
+.xlxw-expresss-body-news-left .tips .text a {
+	color: white;
+}
+
+.xlxw-expresss-body-news-left .tips .text a:hover {
+	color: yellow;
+}
+
+.xlxw-expresss-body-news-left:hover .text {
+	width: auto;
+	padding: 5px 15px 5px 10px;
+	-webkit-transition: all .2s cubic-bezier(0, .34, .71, 1.26)!important;
+	-moz-transition: all .2s cubic-bezier(0, .34, .71, 1.26)!important;
+	-ms-transition: all .2s cubic-bezier(0, .34, .71, 1.26)!important;
+	-o-transition: all .2s cubic-bezier(0, .34, .71, 1.26)!important;
+	transition: all .2s cubic-bezier(0, .34, .71, 1.26)!important;
+}
+
+.xlxw-expresss-body-news-right {
+	width: 60%;
+	height: 300px;
+	float: right;
+	margin-top: 60px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: blue;
+	text-decoration: none;
+}
+
+#tabfirst {
+	width: 600px;
+	margin-left: 60px;
+}
+
+#tabfirst li {
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	float: left;
+	border-bottom: solid #079FC9;
+	border-radius: 5%;
+}
+
+#tabfirst li.tabin {
+	border-top: solid #079FC9;
+	border-left: solid #079FC9;
+	border-right: solid #079FC9;
+	border-bottom: none;
+	margin-bottom: 20px;
+}
+
+div.contentfirst {
+	clear: left;
+	color: black;
+	width: 100%;
+	height: 250px;
+	display: none;
+	margin-left: 60px;
+}
+
+div.contentin {
+	display: block;
+}

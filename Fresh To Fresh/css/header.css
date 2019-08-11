@@ -1,0 +1,305 @@
+@charset "utf-8";
+
+/*!
+ * 
+ * < 鲜来鲜往 - header >
+ * 
+ * @author:曹晨磊;
+ * @since:1.0;
+ * 
+ * */
+
+
+/*全局变量样式*/
+
+body {
+	min-width: 1280px !important;
+	background-color: #F3F3F3 !important;
+	color: #222 !important;
+	font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", sans-serif;
+}
+
+.mdui-container {
+	min-width: 1280px !important;
+}
+
+
+/**
+ * 
+ * ##头部导航条样式##
+ * 
+ * */
+
+.xlxw-header {
+	border-bottom: 1px solid #E0E0E0;
+	font-size: 12px;
+}
+
+.xlxw-header>div {
+	height: 29px;
+	line-height: 29px;
+	position: relative;
+}
+
+
+/*头部导航条左边样式*/
+
+.xlxw-header-left {
+	width: 65px;
+	height: 29px;
+	float: left;
+	border-left: 1px solid #FCFCFC;
+	border-right: 1px solid #FCFCFC;
+	position: relative;
+}
+
+.xlxw-header-left:hover {
+	background: #FFF;
+	border-left: 1px solid #E0E0E0;
+	border-right: 1px solid #E0E0E0;
+}
+
+.xlxw-header-left>i {
+	color: #333;
+	margin-top: -2px;
+}
+
+.xlxw-header-areatext {
+	cursor: pointer;
+}
+
+.xlxw-header-left:hover .xlxw-header-areatext-ul {
+	display: block;
+	background: #FFF;
+}
+
+.xlxw-header-areatext-ul {
+	margin: 0px;
+	padding: 5px;
+	width: 300px !important;
+	overflow: hidden;
+	border: 1px solid #E0E0E0;
+	display: none;
+	position: absolute;
+	left: -1px;
+	z-index: 9999;
+}
+
+.xlxw-header-areatext-ul>li {
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	list-style: none;
+	float: left;
+	margin: 5px;
+	cursor: pointer;
+}
+
+.xlxw-header-areatext-ul>li:hover {
+	color: #FFF;
+	background: #4CAF50;
+}
+
+.xlxw-header-areatext-ul>li:nth-child(1) {
+	color: #FFF;
+	background: #4CAF50;
+}
+
+
+/*头部导航条右边样式*/
+
+.xlxw-headerbar-right {
+	width: 700px;
+	height: 29px;
+	line-height: 29px;
+	float: right;
+}
+
+.xlxw-headerbar-right>ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 0;
+	width: 642px;
+	height: 29px;
+	line-height: 29px;
+	float: right;
+}
+
+.xlxw-headerbar-right>ul>li {
+	list-style: none;
+	float: left;
+	text-align: center;
+}
+
+.xlxw-headerbar-right>ul>li>a {
+	margin-left: 7.5px;
+	margin-right: 10px;
+	color: #212121;
+	text-decoration: none;
+}
+
+.xlxw-headerbar-right>ul>li>a:hover {
+	color: #4CAF50;
+}
+
+.xlxw-headerbar-right i {
+	color: #666;
+	margin-left: -2px;
+	margin-right: -6px;
+}
+
+.xlxw-headerbar-spacer {
+	overflow: hidden;
+	margin: 7.5px 0px 0;
+	width: 1px !important;
+	height: 15px;
+	background-color: #ddd;
+}
+
+
+/*头部导航条右边下拉菜单样式*/
+
+.xlxw-headerbar-buyer-ul,
+.xlxw-headerbar-seller-ul,
+.xlxw-headerbar-service-ul {
+	margin: 0px;
+	padding: 5px;
+	text-align: center;
+	list-style: none;
+	border: 1px solid #E0E0E0;
+	display: none;
+	position: relative;
+	z-index: 9999;
+}
+
+.xlxw-headerbar-buyer-ul a,
+.xlxw-headerbar-seller-ul a,
+.xlxw-headerbar-service-ul a {
+	text-decoration: none;
+	color: #212121;
+}
+
+.xlxw-headerbar-buyer:hover,
+.xlxw-headerbar-seller:hover,
+.xlxw-headerbar-service:hover {
+	background: #FFF;
+}
+
+.xlxw-headerbar-buyer-ul a:hover,
+.xlxw-headerbar-seller-ul a:hover,
+.xlxw-headerbar-service-ul a:hover {
+	color: #4CAF50;
+}
+
+.xlxw-headerbar-buyer:hover .xlxw-headerbar-buyer-ul {
+	display: block;
+	background: #FFF;
+}
+
+.xlxw-headerbar-seller:hover .xlxw-headerbar-seller-ul {
+	display: block;
+	background: #FFF;
+}
+
+.xlxw-headerbar-service:hover .xlxw-headerbar-service-ul {
+	display: block;
+	background: #FFF;
+}
+
+.xlxw-headerbar-webnav-ul {
+	position: absolute;
+	left: 8px;
+	width: calc(100% - 39px);
+	height: 160px;
+	margin: 0px;
+	padding: 0px;
+	max-height: 1280px;
+	background: #FFF;
+	border: 1px solid #E0E0E0;
+	display: none;
+	list-style: none;
+	padding-left: 20px;
+	z-index: 9999;
+}
+
+.xlxw-headerbar-webnav:hover {
+	background: #FFF;
+}
+
+.xlxw-headerbar-webnav:hover .xlxw-headerbar-webnav-ul {
+	display: block;
+	background: #FFF;
+}
+
+.xlxw-headerbar-webnav-ul>li {
+	width: 12.5%;
+	height: 135px;
+	float: left;
+	margin-top: 12.5px;
+	margin-bottom: 12.5px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.xlxw-headerbar-webnav-ul-subnav {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.xlxw-headerbar-webnav-ul-subnav>li {
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	float: left;
+}
+
+.xlxw-headerbar-webnav-ul-subnav>li>a {
+	text-decoration: none;
+	color: #212121;
+	font-size: 12px;
+}
+
+.xlxw-headerbar-webnav-ul-subnav>li>a:hover {
+	color: #4CAF50;
+}
+
+.xlxw-headerbar-webnav-ul-express,
+.xlxw-headerbar-webnav-ul-public-welfare,
+.xlxw-headerbar-webnav-ul-mobile-phone-edition {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.xlxw-headerbar-webnav-ul-express>li,
+.xlxw-headerbar-webnav-ul-public-welfare>li,
+.xlxw-headerbar-webnav-ul-mobile-phone-edition {
+	width: 85%;
+	height: 30px;
+	margin: 0px auto;
+	line-height: 30px;
+	text-align: center;
+	line-height: 35px;
+}
+
+.xlxw-headerbar-webnav-ul-mobile-phone-edition {
+	line-height: 105px;
+}
+
+.xlxw-headerbar-webnav-ul-express>li>a,
+.xlxw-headerbar-webnav-ul-public-welfare>li>a {
+	text-decoration: none;
+	color: #212121;
+}
+
+.xlxw-headerbar-webnav-ul-express>li>a:hover,
+.xlxw-headerbar-webnav-ul-public-welfare>li>a:hover {
+	color: #4CAF50;
+}
+
+.xlxw-headerbar-webnav-ul-last {
+	width: 12.5% !important;
+}

@@ -1,0 +1,1054 @@
+@charset "utf-8";
+
+/*!
+ * 
+ * < 鲜来鲜往 - 鲜来公益 >
+ * 
+ * @author:葛彤彤;
+ * @since:2.0;
+ * 
+ * */
+
+
+/*全局变量样式*/
+
+body {
+	min-width: 1280px !important;
+	background-color: #F3F3F3 !important;
+	color: #222 !important;
+	font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", sans-serif;
+}
+
+.mdui-container {
+	min-width: 1280px !important;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-width: 1280px;
+	color: #212121;
+	font-size: 14px;
+	background-color: #F2F1F2;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+.mdui-container {
+	min-width: 1280px !important;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #4CAF50;
+	text-decoration: underline;
+}
+
+
+/*导航栏开始*/
+
+.xlxw-love-nav {
+	width: 100%;
+	height: 70px;
+	background-color: #FE4451;
+}
+
+.xlxw-love-nav img {
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	margin-top: -10px;
+}
+
+.xlxw-love-nav-word {
+	margin-top: -50px;
+	color: #fff;
+}
+
+.xlxw-love-nav li {
+	width: 90px;
+	height: 70px;
+	float: left;
+	text-align: center;
+	line-height: 70px;
+	margin-left: 97px;
+}
+
+.xlxw-love-nav li a {
+	color: white;
+	text-decoration: none;
+	font-size: 19px;
+	font-weight: bold;
+}
+
+.xlxw-love-nav a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+.xlxw-love-nav li .xlxw-love-nav2 {
+	width: 100%;
+	height: 70px;
+	display: none;
+	/*二级菜单*/
+}
+
+.xlxw-love-nav2 li {
+	width: 90px;
+	height: 70px;
+	text-align: center;
+	line-height: 70px;
+	background-color: #FE4451;
+	margin-left: 0px;
+	position: relative;
+	z-index: 900;
+}
+
+.xlxw-love-nav li:hover .xlxw-love-nav2 {
+	display: block;
+}
+
+
+/*导航栏结束*/
+
+
+/*banner开始*/
+
+#carousel {
+	/*防止别的设置干扰*/
+	margin: 0px;
+	padding: 0px;
+	/*设置轮播容器大小*/
+	width: 1230px;
+	height: 410px;
+	/*居中容器*/
+	margin: 0px auto;
+	/*盒模式*/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/*设置边框*/
+	border: 1px solid #E0E0E0;
+	/*设置相对定位，方便子元素使用绝对定位*/
+	position: relative;
+	/*多余部分隐藏*/
+	overflow: hidden;
+}
+
+#carousel_image_container {
+	/*防止别的设置干扰*/
+	margin: 0px;
+	padding: 0px;
+	/*清除列表样式*/
+	list-style: none;
+	/*设置容器大小*/
+	width: 5760px;
+	height: 540px;
+	/*设置容器位置*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#carousel_image_container>li {
+	/*设置大小*/
+	width: 1230px;
+	height: 410px;
+	/*设置浮动*/
+	float: left;
+}
+
+#carousel_image_container>li>a {
+	/*设置大小*/
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+#carousel_image_container>li>a>img {
+	/*防止别的设置干扰*/
+	outline: none;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+	/*设置轮播容器大小*/
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+#carousel_li_container {
+	/*防止别的设置干扰*/
+	margin: 0px;
+	padding: 0px 10px;
+	/*清除列表样式*/
+	list-style: none;
+	/*设置容器大小*/
+	height: 25px;
+	/*设置边框*/
+	border-radius: 20px;
+	/*设置位置*/
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	margin-left: -88.625px;
+	z-index: 2000;
+	background: #CCC;
+	/*设置透明度*/
+	opacity: .8;
+}
+
+#carousel_li_container>li {
+	/*防止别的设置干扰*/
+	margin: 3.75px 7px;
+	padding: 0px;
+	/*设置容器大小*/
+	width: 17.5px;
+	height: 17.5px;
+	/*盒模式*/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/*设置边框*/
+	border-radius: 50%;
+	border: 1px solid #FFF;
+	float: left;
+	/*设置小手*/
+	cursor: pointer;
+	/*设置动画效果*/
+	transition: all .5s;
+}
+
+#carousel_li_container>li.active {
+	background: #fff;
+}
+
+#carousel_controller {
+	display: none;
+}
+
+#carousel:hover #carousel_controller {
+	display: block;
+}
+
+#carousel_controller span {
+	width: 45px;
+	height: 60px;
+	display: block;
+	background: rgba(0, 0, 0, 0.3);
+	text-align: center;
+	line-height: 60px;
+	color: #fff;
+	font-size: 26px;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	cursor: pointer;
+}
+
+#carousel_controller span:hover {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+#carousel_controller_left {
+	left: 0;
+}
+
+#carousel_controller_right {
+	right: 0;
+}
+
+
+/*banner结束*/
+
+
+/*body开始*/
+
+.xlxw-love-body-big {
+	width: 1230px;
+	height: 500px;
+	margin-left: 15px;
+}
+
+.xlxw-love-body-left {
+	width: 70%;
+	height: 500px;
+	float: left;
+}
+
+.xlxw-love-body-right {
+	width: 30%;
+	height: 500px;
+	float: left;
+}
+
+
+/*爱心捐赠开始*/
+
+.xlxw-love-body-right-love {
+	width: 90%;
+	height: 230px;
+	background-color: #FFFFFF;
+	margin-top: 30px;
+}
+
+.xlxw-love-body-right-love-word {
+	color: #fff;
+	font-size: 20px;
+	padding-top: 20px;
+	color: #F82939;
+	width: 80%;
+	height: 40px;
+	padding-left: 10%;
+}
+
+.xlxw-love-body-right-love-word2 {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.xlxw-love-body-right-love-word2 span {
+	font-size: 30px;
+	color: red;
+}
+
+.xlxw-love-body-right-love-project {
+	display: block;
+	margin-top: 20px;
+	width: 80%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	margin-left: 10%;
+	background-color: #FE4451;
+	color: #FFFFFF;
+}
+
+.xlxw-love-body-right-love-project:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+
+/*爱心捐赠结束*/
+
+
+/*捐款查询开始*/
+
+.xlxw-love-body-right-query {
+	width: 90%;
+	height: 180px;
+	background-color: #FFFFFF;
+	margin-top: 30px;
+}
+
+.xlxw-love-body-right-query-word {
+	color: #fff;
+	font-size: 20px;
+	padding-top: 20px;
+	color: #F82939;
+	width: 80%;
+	height: 40px;
+	padding-left: 10%;
+}
+
+.xlxw-love-body-right-query form {
+	width: 80%;
+	margin-left: 10%;
+	height: 40px;
+	margin-top: 30px;
+}
+
+.xlxw-love-body-right-query-txt {
+	width: 73%;
+	height: 36px;
+	outline: none;
+	border: 1px solid #E0E0E0;
+	padding-left: 10px;
+	float: left;
+	margin-right: 2px;
+}
+
+.xlxw-love-body-right-query-search {
+	width: 20%;
+	height: 38px;
+	margin-left: -3px;
+	vertical-align: middle;
+	outline: none;
+	border: none;
+	line-height: 40px;
+	display: block;
+	cursor: pointer;
+	float: left;
+}
+
+
+/*捐款查询结束*/
+
+
+/*公益项目开始*/
+
+.xlxw-love-body-left-project {
+	width: 100%;
+	height: 440px;
+	margin-top: 30px;
+	background-color: #FFFFFF;
+}
+
+.xlxw-love-body-left-project-word {
+	color: #fff;
+	font-size: 20px;
+	padding-top: 20px;
+	color: #F82939;
+	width: 80%;
+	height: 40px;
+	padding-left: 5%;
+}
+
+.xlxw-love-body-left-project ul {
+	width: 90%;
+	height: 350px;
+	margin-left: 5%;
+	margin-top: 25px;
+}
+
+.xlxw-love-body-left-box18 {
+	width: 30%;
+	height: 320px;
+	float: left;
+	overflow: hidden;
+	margin-left: 5px;
+}
+
+.xlxw-love-body-left-box17 {
+	width: 30%;
+	height: 320px;
+	float: left;
+	overflow: hidden;
+}
+
+.xlxw-love-body-left-box {
+	width: 30%;
+	height: 320px;
+	float: left;
+	margin-left: 31px;
+	margin-right: 31px;
+	overflow: hidden;
+}
+
+.xlxw-love-body-left-box-img {
+	width: 100%;
+	height: 150px;
+	transform: all 0.5s;
+}
+
+.xlxw-love-body-left-box17:hover .xlxw-love-body-left-box-img {
+	transform: scale(1.1);
+}
+
+.xlxw-love-body-left-box18:hover .xlxw-love-body-left-box-img {
+	transform: scale(1.1);
+}
+
+.xlxw-love-body-left-box:hover .xlxw-love-body-left-box-img {
+	transform: scale(1.1);
+}
+
+.xlxw-love-body-left-project-word2 {
+	font-weight: bold;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.xlxw-love-body-left-project-word9 {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+/*公益项目结束*/
+
+
+/*众筹开始*/
+
+.xlxw-love-body-crowd {
+	width: 1230px;
+	height: 420px;
+	background-color: #F7D3C4;
+	/*background-color: #EAE5C9;*/
+	margin-left: 15px;
+}
+
+.xlxw-love-body-crowd-box-word {
+	color: #fff;
+	font-size: 20px;
+	padding-top: 20px;
+	color: #F82939;
+	width: 80%;
+	height: 40px;
+	padding-left: 5%;
+}
+
+.xlxw-love-body-crowd ul {
+	width: 90%;
+	height: 300px;
+	margin-left: 5%;
+	margin-top: 20px;
+}
+
+.xlxw-love-body-crowd ul li {
+	width: 30%;
+	height: 300px;
+	float: left;
+	margin-left: 25px;
+}
+
+.xlxw-love-body-crowd-box {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+
+.xlxw-love-body-crowd-box-img {
+	width: 200px;
+	height: 200px;
+	margin: 40px 0px 0px 60px;
+	transform: all 0.5s;
+}
+
+.xlxw-love-body-crowd-box:hover .xlxw-love-body-crowd-box-img {
+	transform: scale(1.3);
+}
+
+.xlxw-love-body-crowd-box-word2 {
+	color: black;
+	font-size: 20px;
+	text-align: center;
+	margin-top: -120px;
+	margin-left: -5px;
+}
+
+.xlxw-love-body-crowd-box3>marquee>p {
+	padding-left: 40px;
+}
+
+.xlxw-love-body-crowd-box3-word {
+	margin-left: 60px;
+}
+
+.xlxw-love-body-crowd-box3-word2 {
+	margin-left: 70px;
+}
+
+.xlxw-love-body-crowd-box3-word3 {
+	border-bottom: solid black;
+	width: 130px;
+	height: 40px;
+	text-align: center;
+	font-size: 17px;
+	margin-left: 90px;
+	line-height: 40px;
+}
+
+#scrollBox {
+	height: 200px;
+	width: 300px;
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+#scrollBox #con1,
+#con2 {
+	width: 280px;
+	float: left;
+}
+
+#scrollBox li {
+	width: 300px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	margin-left: -15px;
+}
+
+
+/*众筹结束*/
+
+
+/*爱心救助开始*/
+
+.xlxw-love-body-love {
+	width: 1230px;
+	height: 500px;
+	background-color: #FFFFFF;
+	margin-left: 15px;
+	margin-top: 30px;
+}
+
+.xlxw-love-body-love-word {
+	color: #fff;
+	font-size: 20px;
+	padding-top: 20px;
+	color: #F82939;
+	width: 80%;
+	height: 40px;
+	padding-left: 5%;
+}
+
+.xlxw-love-body-love ul {
+	width: 90%;
+	height: 380px;
+	margin-left: 4%;
+	margin-top: 20px;
+}
+
+.xlxw-love-body-love>ul>li {
+	width: 30%;
+	height: 380px;
+	float: left;
+	margin-left: 30px;
+	background-color: #F2F2F2;
+}
+
+.xlxw-love-body-love-box {
+	overflow: hidden;
+}
+
+.xlxw-love-body-love-img {
+	transform: all 0.5s;
+}
+
+.xlxw-love-body-love-box:hover .xlxw-love-body-love-img {
+	transform: scale(1.1);
+}
+
+.xlxw-love-body-love ul li img {
+	width: 100%;
+	height: 200px;
+	transform: all 0.5s;
+}
+
+.xlxw-love-body-love>ul:hover .xlxw-love-body-love>ul>li>img {
+	transform: scale(1.3);
+}
+
+.xlxw-love-body-love-word2 {
+	margin-top: 10px;
+	color: black;
+	font-size: 18px;
+	padding-left: 20px;
+}
+
+.xlxw-love-body-love-box {
+	width: 100px;
+	float: left;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.xlxw-love-body-love-word3 {
+	color: #FF0000;
+	font-size: 20px;
+	text-align: center;
+}
+
+.xlxw-love-body-love-word4 {
+	text-align: center;
+}
+
+.xlxw-love-body-love-word5 {
+	margin-top: 10px;
+	padding-left: 20px;
+}
+
+
+/*爱心救助结束*/
+
+
+/*时间轴开始*/
+
+.xlxw-love-body-time {
+	width: 1230px;
+	height: 400px;
+	background-color: #F7D3C4;
+	margin-top: 30px;
+	margin-left: 15px;
+}
+
+.xlxw-love-body-time-word {
+	color: #fff;
+	font-size: 20px;
+	padding-top: 20px;
+	color: #F82939;
+	width: 80%;
+	height: 40px;
+	padding-left: 5%;
+}
+
+a,
+img {
+	border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	font-size: 12px;
+}
+
+a {
+	color: #666;
+	text-decoration: none;
+	transition: background-color 0.1s ease-in 0s, color 0.2s ease-in 0s;
+	-webkit-transition: background-color 0.1s ease-in 0s, color 0.2s ease-in 0s;
+	outline: none
+}
+
+a:hover {
+	color: #333;
+}
+
+.clear {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	font-size: 0px;
+	line-height: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+*html .clearfix {
+	zoom: 1;
+}
+
+*+html .clearfix {
+	zoom: 1;
+}
+
+
+/* 时间轴样式 */
+
+.course_nr2 {
+	border-top: 1px solid #707070;
+	margin-top: 150px;
+}
+
+.course_nr {
+	height: 162px;
+	background: url(../images/ftf-love/026.gif) 6repeat-x center;
+}
+
+.course_nr li {
+	float: left;
+	background: url(../images/ftf-love/027.gif) no-repeat center top;
+	padding-top: 30px;
+	width: 140px;
+	text-align: center;
+	position: relative;
+	margin-top: -10px;
+}
+
+.shiji {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: -20px;
+	display: none;
+}
+
+.shiji h1 {
+	height: 67px;
+	line-height: 67px;
+	color: #518dbb;
+	font-weight: bold;
+	background: url(../images/ftf-love/028.gif) no-repeat center top;
+	margin-bottom: 8px;
+}
+
+.shiji p {
+	line-height: 14px;
+	color: #999;
+}
+
+.xlxw-love-body-time2 {
+	list-style-type: none;
+	border-top: 1px solid #707070;
+	max-width: 1300px;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 150px;
+}
+
+
+/*.xlxw-love-body-time2 li {
+	float: left;
+	position: relative;
+	text-align: center;
+	width: 19%;
+	padding-top: 10px;
+	font-size: 15px;
+}*/
+
+
+/*.xlxw-love-body-time2 li b:before {
+	content: '';
+	position: absolute;
+	top: -10px;
+	left: 47%;
+	width: 12px;
+	height: 12px;
+	border: 2px solid #4c4c4c;
+	border-radius: 8px;
+	background: #4c4c4c;
+}*/
+
+
+/*时间轴结束*/
+
+
+/*扶贫之路开始*/
+
+.xlxw-love-body-road {
+	width: 1230px;
+	margin-left: 15px;
+	height: 400px;
+	background-color: #FFFFFF;
+	margin-top: 30px;
+}
+
+.xlxw-love--body-road-word {
+	color: #fff;
+	font-size: 20px;
+	padding-top: 20px;
+	color: #F82939;
+	width: 80%;
+	height: 40px;
+	padding-left: 5%;
+}
+
+.xlxw-love--body-road-word1 {
+	margin: 80px 0px 0px 150px;
+	float: left;
+}
+
+.xlxw-love--body-road-word1 span {
+	font-size: 20px;
+	color: red;
+}
+
+.xlxw-love-body-road img {
+	width: 400px;
+	height: 300px;
+	margin: 0px 0px 0px 180px;
+	float: left;
+}
+
+
+/*扶贫之路结束*/
+
+
+/*侧边栏开始*/
+
+
+/*
+.wuyou-waiter {
+	position: fixed;
+	right: 0px;
+	top: 50%;
+	margin-top: -90px;
+	width: 60px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
+	z-index: 999;
+}
+
+.waiter-ul li {
+	position: relative;
+	height: 60px;
+	line-height: 60px;
+	border-bottom: 1px solid #fff;
+}
+
+.waiter-ul li a {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	color: #fff;
+	display: block;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	-webkit-transition: all 0.6s;
+	-ms-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+	text-decoration: none;
+	font-size: 24px;
+}
+
+.waiter-title {
+	position: absolute;
+	left: 0px;
+	bottom: 1px;
+	color: #fff;
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	-webkit-transition: all 0.6s;
+	-ms-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+	z-index: 1;
+	opacity: 0;
+}
+
+.waiter-title:before {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: -5px;
+	top: 14px;
+	background-color: #fff;
+	transform: rotate(45deg);
+}
+
+.waiter-ul li:hover .waiter-title {
+	left: -88px;
+	opacity: 1;
+}
+
+.waiter-ul li.wuyou-contact a {
+	background-color: #62FF42;
+}
+
+.waiter-ul li.wuyou-contact .waiter-title {
+	background-color:#62FF42;
+}
+
+.waiter-ul li.wuyou-contact .waiter-title:before {
+	background-color:#62FF42;
+}
+
+.waiter-ul li.wuyou-top a {
+	background-color:#62FF42;
+}
+
+.waiter-ul li.wuyou-top .waiter-title {
+	background-color:#62FF42;
+}
+
+.waiter-ul li.wuyou-top .waiter-title:before {
+	background-color: #62FF42;
+}*/
+
+
+/*侧边栏结束*/
+
+
+/*body结束*/
+
+
+/*关于我们开始*/
+
+.js-mask {
+	width: 1000px;
+	height: 132px;
+	border: 1px solid black;
+	position: relative;
+	overflow: hidden;
+	margin-top: 40px;
+	margin-left: 110px;
+}
+
+.js-mask ul {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.js-mask ul li {
+	float: left;
+	width: 198px;
+	height: 132px;
+	margin-left: 20px;
+}
+
+.js-mask ul li img {
+	width: 198px;
+	height: 132px;
+}
+
+.xlxw-love-body-our {
+	width: 1230px;
+	margin-left: 15px;
+	height: 300px;
+	background-color: #FFFFFF;
+	margin-top: 30px;
+}
+
+.xlxw-love--body-our-word {
+	color: #fff;
+	font-size: 20px;
+	padding-top: 20px;
+	color: #F82939;
+	width: 80%;
+	height: 40px;
+	padding-left: 5%;
+}
+
+
+/*与我们结束*/
+
+
+/*底部开始*/
+
+.xlxw-love-body-bottom {
+	width: 1230px;
+	margin-left: 15px;
+	height: 160px;
+	background-color: #F5A2A5;
+	border: solid #F5A2A5 1px;
+}
+
+.xlxw-love-body-bottom p {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.xlxw-love-body-bottom a {
+	color: black;
+}
+
+.xlxw-love-body-bottom a:hover {
+	color: gray;
+}
+
+
+/*底部结束*/

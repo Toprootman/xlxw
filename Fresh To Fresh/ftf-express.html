@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<script>
+		window.AESKey = '';
+		// 判断浏览器是否支持placeholder属性
+		function isSupportPlaceholder() {
+			var input = document.createElement('input');
+			return 'placeholder' in input;
+		};
+		(function() {
+			//判断是否是IE浏览器，包括Edge浏览器
+			function IEVersion() {
+				//取得浏览器的userAgent字符串
+				var userAgent = navigator.userAgent;
+				//判断是否IE浏览器
+				var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+				if(isIE) {
+					var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+					reIE.test(userAgent);
+					var fIEVersion = parseFloat(RegExp["$1"]);
+					if(fIEVersion < 11 || !isSupportPlaceholder()) {
+						return true;
+					}
+				} else {
+					return false;
+				}
+			}
+
+			var tpl = ['<img style="border:none;outline:0;display:block;width:450px;height:140px;position:absolute;top:50%;left:50%;margin-left:-225px;margin-top:-70px" src="images/common/error/error.png">'].join('');
+
+			window.onload = function() {
+				if(IEVersion()) {
+					document.write(tpl);
+				}
+			};
+			window.siteName = "温馨提示";
+		})();
+	</script>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>鲜来快递</title>
+		<meta name="keywords" content="keywords">
+		<meta name="description" content="description">
+		<!--引入网站公共图标文件，默认为绿色-->
+		<link rel="shortcut icon" href="images/common/favicon/green.ico" />
+		<!--引入网站公共样式文件，默认为MDUI.CSS-->
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<!--引入当前页面特有样式-->
+		<!--选项卡-->
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/ftf-express.css" type="text/css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<div class="mdui-container-fluid xlxw-body">
+			<div class="mdui-container">
+				<!--头部开始-->
+				<div class="xlxw-expresss-head">
+					<ul class="xlxw-expresss-head-one">
+						<li class="xlxw-expresss-logo"></li>
+						<li>
+							<a href="index.html">鲜来商城</a>
+						</li>
+						<li>
+							<a href="login.html">新闻公告</a>
+							<ul class="xlxw-expresss-head-two">
+								<li>
+									<a href="login.html">企业新闻</a>
+								</li>
+								<li>
+									<a href="login.html">行业动态</a>
+								</li>
+								<li>
+									<a href="login.html">信息公告</a>
+								</li>
+								<li>
+									<a href="login.html">车源货源</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="login.html">客户服务</a>
+							<ul class="xlxw-expresss-head-two">
+								<li>
+									<a href="login.html">在线客服</a>
+								</li>
+								<li>
+									<a href="login.html">联系电话</a>
+								</li>
+								<li>
+									<a href="login.html">意见反馈</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="login.html">加盟合作</a>
+							<ul class="xlxw-expresss-head-two">
+								<li>
+									<a href="login.html">我要加盟</a>
+								</li>
+								<li>
+									<a href="login.html">我要合作</a>
+								</li>
+								<li>
+									<a href="login.html">加盟网点</a>
+								</li>
+								<li>
+									<a href="login.html">商家合作</a>
+								</li>
+								<li>
+									<a href="login.html">供应商合作</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="login.html">鲜来招聘</a>
+							<ul class="xlxw-expresss-head-two">
+								<li>
+									<a href="login.html">职位搜索</a>
+								</li>
+								<li>
+									<a href="login.html">招聘信息</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!--头部结束-->
+				<!--body开始-->
+				<div class="xlxw-expresss-body">
+					<!--banner开始-->
+					<div class="xlxw-expresss-body-banner">
+						<img src="images/ftf-express/002.jpg" />
+					</div>
+					<!--banner结束-->
+
+					<!--客户服务开始-->
+					<div class="xlxw-expresss-body-service">
+						<p class="xlxw-expresss-body-service-word">客户服务</p>
+						<img src="images/ftf-express/003.png" class="xlxw-expresss-body-service-line">
+						<ul>
+							<li>
+								<img src="images/ftf-express/004.png">
+								<p class="xlxw-expresss-body-service-word2">
+									<a href="login.html" class="xlxw-expresss-body-service-word2-a">快件查询</a>
+								</p>
+								<p class="xlxw-expresss-body-service-word3">快速查询订单详情</p>
+							</li>
+							<li>
+								<img src="images/ftf-express/006.png">
+								<p class="xlxw-expresss-body-service-word2">
+									<a href="login.html" class="xlxw-expresss-body-service-word2-a">在线寄件</a>
+								</p>
+								<p class="xlxw-expresss-body-service-word3">客户寄件流程<br />注意事项寄件方便快捷</p>
+							</li>
+							<li>
+								<img src="images/ftf-express/005.png">
+								<p class="xlxw-expresss-body-service-word2">
+									<a href="login.html" class="xlxw-expresss-body-service-word2-a">网点查询</a>
+								</p>
+								<p class="xlxw-expresss-body-service-word3">全国网点分布查询</p>
+							</li>
+							<li>
+								<img src="images/ftf-express/007.png">
+								<p class="xlxw-expresss-body-service-word2">
+									<a href="login.html" class="xlxw-expresss-body-service-word2-a">在线客服</a>
+								</p>
+								<p class="xlxw-expresss-body-service-word3">直接联系客服或者拨打热线7777777</p>
+							</li>
+						</ul>
+					</div>
+					<!--客户服务结束-->
+
+					<!--新闻开始-->
+					<div class="xlxw-expresss-body-news">
+						<p class="xlxw-expresss-body-news-word">新闻公告</p>
+						<img src="images/ftf-express/003.png" class="xlxw-expresss-body-news-line">
+						<div class="xlxw-expresss-body-news-left">
+							<a href=""><img src="images/ftf-express/017.jpg"></a>
+							<div class="tips">
+								<i>i</i>
+								<div class="text">
+									<a href="login.html">货源、车源</a>
+								</div>
+							</div>
+						</div>
+						<div class="xlxw-expresss-body-news-right">
+							<ul id="tabfirst">
+								<li class='tabin' id="li1">
+									<a href="#" onMouseOver="showdiv('1')">企业新闻 </a>
+								</li>
+								<li id="li2">
+									<a href="#" onMouseOver="showdiv('2')"> 行业新闻</a>
+								</li>
+								<li id="li3">
+									<a href="#" onMouseOver="showdiv('3')"> 信息公告</a>
+								</li>
+								<li id="li3">
+									<a href="#" onMouseOver="showdiv('3')"> </a>
+								</li>
+
+							</ul>
+							<div class="contentin contentfirst" id="content1">
+								<ul>
+									<li>
+										<a href="login.html">快递包裹送万家，绿色理念传万家</a>
+									</li>
+									<li>
+										<a href="login.html">快递包裹送万家，绿色理念传万家</a>
+									</li>
+									<li>
+										<a href="login.html">快递包裹送万家，绿色理念传万家</a>
+									</li>
+									<li>
+										<a href="login.html">快递包裹送万家，绿色理念传万家</a>
+									</li>
+									<li>
+										<a href="login.html">快递包裹送万家，绿色理念传万家</a>
+									</li>
+									<li>
+										<a href="login.html">快递包裹送万家，绿色理念传万家</a>
+									</li>
+									<li>
+										<a href="login.html">快递包裹送万家，绿色理念传万家</a>
+									</li>
+									<li>
+										<a href="login.html">快递包裹送万家，绿色理念传万家</a>
+									</li>
+								</ul>
+							</div>
+							<div class="contentfirst" id="content2">
+								<ul>
+									<li>
+										<a href="login.html">《快递暂行条例》宣贯全国电视电话会议召开</a>
+									</li>
+									<li>
+										<a href="login.html">《快递暂行条例》宣贯全国电视电话会议召开</a>
+									</li>
+									<li>
+										<a href="login.html">《快递暂行条例》宣贯全国电视电话会议召开</a>
+									</li>
+									<li>
+										<a href="login.html">《快递暂行条例》宣贯全国电视电话会议召开</a>
+									</li>
+									<li>
+										<a href="login.html">《快递暂行条例》宣贯全国电视电话会议召开</a>
+									</li>
+									<li>
+										<a href="login.html">《快递暂行条例》宣贯全国电视电话会议召开</a>
+									</li>
+									<li>
+										<a href="login.html">《快递暂行条例》宣贯全国电视电话会议召开</a>
+									</li>
+									<li>
+										<a href="login.html">《快递暂行条例》宣贯全国电视电话会议召开</a>
+									</li>
+								</ul>
+							</div>
+							<div class="contentfirst" id="content3">
+								<ul>
+									<li>
+										<a href="login.html">关于我国部分地区雨雪恶劣天气告客户书</a>
+									</li>
+									<li>
+										<a href="login.html">关于我国部分地区雨雪恶劣天气告客户书</a>
+									</li>
+									<li>
+										<a href="login.html">关于我国部分地区雨雪恶劣天气告客户书</a>
+									</li>
+									<li>
+										<a href="login.html">关于我国部分地区雨雪恶劣天气告客户书</a>
+									</li>
+									<li>
+										<a href="login.html">关于我国部分地区雨雪恶劣天气告客户书</a>
+									</li>
+									<li>
+										<a href="login.html">关于我国部分地区雨雪恶劣天气告客户书</a>
+									</li>
+									<li>
+										<a href="login.html">关于我国部分地区雨雪恶劣天气告客户书</a>
+									</li>
+									<li>
+										<a href="login.html">关于我国部分地区雨雪恶劣天气告客户书</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!--新闻结束-->
+				<div class="xlxw-expresss-body-dispatching-box">
+					<div class="xlxw-expresss-body-dispatching">
+						<h2>配送流程</h2>
+						<div>果园采摘<i>—</i>现场打包<i>—</i>统一装车<i>—</i>专车机车运送<i>—</i>配送</div>
+						<p>鲜来鲜往特别开设的生鲜绿色通道业务，结合鲜来快递强大的快递配送体系，发展生鲜承运事业，优化运输成本，为客户提供快速，安全，专业，高性价比的服务体验，帮助客户创造最大的价值。</p>
+						<div>网上下单</div>
+					</div>
+					<div>
+						<div class="xlxw-expresss-body-introduce">
+							<div class="xlxw-expresss-body-introduce-one">
+								<img src="images/ftf-express/008.png" />
+								<h3>生鲜速运</h3>
+								<p>当天达：承诺12小时内送达，最快8小时可达；</p>
+								<p>次日达：承诺24小时内送达，最快16小时可达</p>
+							</div>
+							<div class="xlxw-expresss-body-introduce-one">
+								<img src="images/ftf-express/009.png" />
+								<h3>时效说明</h3>
+								<p>对于收件地为偏远地区（国家划分的二级及二级以下行政区域），由于需要额外的中转时间，时效需增加0.5-1个工作日，具体时效请咨询4008-098-098转市场专员。</p>
+							</div>
+							<div class="xlxw-expresss-body-introduce-one">
+								<img src="images/ftf-express/010.png" />
+								<h3>服务承诺</h3>
+								<p>限时未达，全额退款。</p>
+								<p>跨越速运以安全、准时、快捷、经济、优质的快递配送体系，为客户的食品安全保驾护航，帮助客户创造最大价值。</p>
+							</div>
+							<div class="xlxw-expresss-body-introduce-one">
+								<img src="images/ftf-express/011.png" />
+								<h3>服务保障</h3>
+								<p>凡我司承诺的时效件未按时送达的（因航班延误或其它不可抗力因素除外），将全额退还此单运费。</p>
+
+							</div>
+							<div class="xlxw-expresss-body-introduce-one">
+								<img src="images/ftf-express/012.png" />
+								<h3>服务特性</h3>
+								<p>保时：从收件、中转、派送各环节全程跟进管理，确保优收优派。</p>
+								<p>保鲜：专业包装方案，独立监控，异常处理机制。</p>
+							</div>
+							<div class="xlxw-expresss-body-introduce-one">
+								<img src="images/ftf-express/013.png" />
+								<h3>增值服务</h3>
+								<p>签回单服务；专业包装以及保鲜服务；免费短信服务（MSG）；免费24小时取派服务；全程GPS定位</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--body结束-->
+		</div>
+		</div>
+		</div>
+
+		<div class="mdui-container-fluid xlxw-body">
+			<div class="mdui-container">
+				<div class="xlxw-expresss-body-bottom">
+					<ul>
+						<li>
+							<a href="login.html">关于我们</a>
+						</li>
+						<li>
+							<a href="login.html">关于我们</a>
+						</li>
+						<li>
+							<a href="login.html">诚聘英才</a>
+						</li>
+						<li>
+							<a href="login.html">用户服务协议</a>
+						</li>
+						<li>
+							<a href="login.html">网站服务条款</a>
+						</li>
+						<li>
+							<a href="login.html">联系我们</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="login.html">购物指南</a>
+						</li>
+						<li>
+							<a href="login.html">新手上路</a>
+						</li>
+						<li>
+							<a href="login.html">订单查询</a>
+						</li>
+						<li>
+							<a href="login.html">会员介绍</a>
+						</li>
+						<li>
+							<a href="login.html">积分</a>
+						</li>
+						<li>
+							<a href="login.html">帮助中心</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="login.html">消费者保障</a>
+						</li>
+						<li>
+							<a href="login.html">人工验货</a>
+						</li>
+						<li>
+							<a href="login.html">退货退款政策</a>
+						</li>
+						<li>
+							<a href="login.html">运费补贴卡</a>
+						</li>
+						<li>
+							<a href="login.html">无忧售后</a>
+						</li>
+						<li>
+							<a href="login.html">先行赔款</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="login.html">联系我们</a>
+						</li>
+						<li style="height: 250px;"><img src="images/ftf-express/014.gif" style="width: 150px;height: 150px;margin-top: 50px;" /></li>
+					</ul>
+					<p class="xlxw-expresss-body-bottom-word">Copyright © 2018 鲜来快递 版权所有</p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<!--引入JQuery文件
+	<script src="scripts/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--引入MDUI.JQ文件-->
+	<script src="scripts/common.js" type="text/javascript" charset="utf-8"></script>
+	<!--初始化所有组件-->
+	<script type="text/javascript">
+		mdui.mutation();
+	</script>
+	<!--选项卡-->
+	<script src="scripts/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script>
+		window.jQuery || document.write('<script src="scripts/jquery-1.12.4.min.js"><\/script>')
+	</script>
+	<script src="scripts/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		function showdiv(s) {
+			if(s == "1") {
+				document.getElementById("content1").className = "contentin contentfirst"; //显示标题1的内容 下面代码类似不在添加注释
+				document.getElementById("content2").className = "contentfirst"; //隐藏标题2的内容 下面代码类似不在添加注释
+				document.getElementById("content3").className = "contentfirst";
+				document.getElementById("li2").className = null; //使标题2与正文内容相离 下面代码类似 不在添加注释
+				document.getElementById("li1").className = "tabin"; //使标题一与正文内容相连接 下面代码类似 不在添加注释
+				document.getElementById("li3").className = null;
+			} else if(s == "2") {
+				document.getElementById("content1").className = "contentfirst";
+				document.getElementById("content2").className = "contentin contentfirst";
+				document.getElementById("content3").className = "contentfirst";
+				document.getElementById("li1").className = null;
+				document.getElementById("li2").className = "tabin";
+				document.getElementById("li3").className = null;
+			} else {
+				document.getElementById("content1").className = "contentfirst";
+				document.getElementById("content3").className = "contentin contentfirst";
+				document.getElementById("content2").className = "contentfirst";
+				document.getElementById("li1").className = null
+				document.getElementById("li2").className = null
+				document.getElementById("li3").className = "tabin";;
+			}
+		}
+	</script>
+
+</html>

@@ -1,0 +1,524 @@
+@charset "utf-8";
+
+/*!
+ * 
+ * < 鲜来鲜往 - 订单页 >
+ * 
+ * @author:曹晨磊;
+ * @since:1.0;
+ * 
+ * */
+
+
+/*全局变量样式*/
+
+body {
+	min-width: 1280px !important;
+	background-color: #F3F3F3 !important;
+	color: #222 !important;
+	font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "WenQuanYi Zen Hei", sans-serif;
+}
+
+.mdui-container {
+	min-width: 1280px !important;
+}
+
+
+/**
+ * ================================================================================
+ * ------------------------------ basic.css------------------------------ 
+ * ================================================================================
+ * */
+
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%
+}
+
+body {
+	margin: 0
+}
+
+h1 {
+	font-size: 2em;
+	margin: .67em 0
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible
+}
+
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em
+}
+
+a {
+	background-color: transparent
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted
+}
+
+b,
+strong {
+	font-weight: bolder
+}
+
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em
+}
+
+small {
+	font-size: 80%
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline
+}
+
+sub {
+	bottom: -.25em
+}
+
+sup {
+	top: -.5em
+}
+
+img {
+	border-style: none
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0
+}
+
+button,
+input {
+	overflow: visible
+}
+
+button,
+select {
+	text-transform: none
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+	-webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+	border-style: none;
+	padding: 0
+}
+
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
+	outline: 1px dotted ButtonText
+}
+
+fieldset {
+	padding: .35em .75em .625em
+}
+
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal
+}
+
+progress {
+	vertical-align: baseline
+}
+
+textarea {
+	overflow: auto
+}
+
+[type=checkbox],
+[type=radio] {
+	box-sizing: border-box;
+	padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+	height: auto
+}
+
+[type=search] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px
+}
+
+[type=search]::-webkit-search-decoration {
+	-webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit
+}
+
+details {
+	display: block
+}
+
+summary {
+	display: list-item
+}
+
+template {
+	display: none
+}
+
+[hidden] {
+	display: none
+}
+
+
+/**
+ * ================================================================================
+ * ------------------------------ common.css------------------------------ 
+ * ================================================================================
+ * */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:after,
+:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #fff;
+}
+
+
+/**
+ * ================================================================================
+ * ------------------------------ order.css------------------------------ 
+ * ================================================================================
+ * */
+
+.shopping-cart {
+	margin: 25px auto;
+	padding: 0px;
+	outline: none;
+	width: 1280px;
+	height: auto;
+	display: block;
+}
+
+.shopping-cart-title {
+	margin: 0px;
+	padding: 0px;
+	outline: none;
+	width: 100%;
+	height: 45px;
+	display: block;
+	background-color: #F3F3F3;
+}
+
+.shopping-cart-item {
+	margin: 10px 0px;
+	padding: 0px;
+	outline: none;
+	width: 100%;
+	height: 100px;
+	display: block;
+	background-color: #F6F6F6;
+}
+
+.shopping-cart-title1,
+.shopping-cart-title2,
+.shopping-cart-title3,
+.shopping-cart-title4,
+.shopping-cart-title5,
+.shopping-cart-title6,
+.shopping-cart-title7,
+.shopping-cart-title8 {
+	height: 45px;
+	line-height: 45px;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.shopping-cart-item1,
+.shopping-cart-item2,
+.shopping-cart-item3,
+.shopping-cart-item4,
+.shopping-cart-item5,
+.shopping-cart-item6,
+.shopping-cart-item7,
+.shopping-cart-item8 {
+	height: 100px;
+	line-height: 100px;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.shopping-cart-title1,
+.shopping-cart-item1 {
+	width: 60px;
+}
+
+.shopping-cart-title2,
+.shopping-cart-item2 {
+	width: 135px;
+}
+
+.shopping-cart-title3,
+.shopping-cart-item3 {
+	width: 210px;
+}
+
+.shopping-cart-title4,
+.shopping-cart-item4 {
+	width: 175px;
+}
+
+.shopping-cart-title5,
+.shopping-cart-item5 {
+	width: 175px;
+}
+
+.shopping-cart-title6,
+.shopping-cart-item6 {
+	width: 175px;
+}
+
+.shopping-cart-title7,
+.shopping-cart-item7 {
+	width: 175px;
+}
+
+.shopping-cart-title8,
+.shopping-cart-item8 {
+	width: 175px;
+}
+
+
+/*购物车单项设置*/
+
+.shopping-cart-item2 {
+	padding: 10px 0px;
+}
+
+.shopping-cart-item2>img {
+	outline: none;
+	border: none;
+}
+
+.shopping-cart-item3>a {
+	width: 100%;
+	height: 36px;
+	font-size: 14px;
+	color: #333;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	font-weight: lighter;
+	line-height: 18px;
+	text-align: left;
+	text-decoration: none;
+	margin-top: 32px;
+}
+
+.shopping-cart-item8>span:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+/*数量控制条*/
+
+.count-control {
+	width: 112px;
+	height: 25px;
+	border: 1px solid #BBB;
+	background: #F9F9F9;
+	margin-top: 37.5px;
+	margin-left: 14px;
+}
+
+.count-control-left,
+.count-control-center,
+.count-control-right {
+	width: 30px;
+	height: 25px;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 25px;
+	overflow: hidden;
+	font-size: 18px;
+	display: block;
+}
+
+.count-control-left,
+.count-control-right {
+	cursor: pointer;
+}
+
+.count-control-left {
+	border-right: 1px solid #BBB;
+}
+
+.count-control-right {
+	border-left: 1px solid #BBB;
+}
+
+.count-control-left:hover,
+.count-control-right:hover {
+	background-color: #CCC;
+}
+
+.count-control-center {
+	width: 50px;
+}
+
+
+/*结算栏目*/
+
+.shopping-cart-bottom {
+	margin: 0px;
+	padding: 0px;
+	outline: none;
+	width: 100%;
+	height: 40px;
+	display: block;
+	background-color: #F6F6F6;
+	line-height: 40px;
+}
+
+.shopping-cart-bottom1,
+.shopping-cart-bottom2,
+.shopping-cart-bottom3,
+.shopping-cart-bottom4,
+.shopping-cart-bottom5,
+.shopping-cart-bottom6,
+.shopping-cart-bottom7,
+.shopping-cart-bottom8 {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	float: left;
+}
+
+.shopping-cart-bottom1 {
+	width: 100px;
+}
+
+.shopping-cart-bottom2 {
+	width: 100px;
+}
+
+.shopping-cart-bottom3 {
+	width: 130px;
+}
+
+.shopping-cart-bottom4 {
+	width: 226.666px;
+}
+
+.shopping-cart-bottom5 {
+	width: 226.666px;
+}
+
+.shopping-cart-bottom6 {
+	width: 226.666px;
+}
+
+.shopping-cart-bottom7 {
+	width: 135px;
+}
+
+.shopping-cart-bottom8 {
+	width: 135px;
+}
+
+.shopping-cart-bottom1:hover,
+.shopping-cart-bottom2:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.shopping-cart-bottom7>span {
+	color: darkred;
+}
+
+.shopping-cart-bottom8>a {
+	width: 125px;
+	height: 40px;
+	margin: 0px 5px;
+	background-color: #31BA6A;
+	color: #FFF;
+	font-size: 16px;
+	text-decoration: none;
+	display: block;
+	line-break: 30px;
+}
+
+
+/*购物车提示*/
+
+.page-shopping-cart-title {
+	margin: 25px auto;
+	padding: 0px;
+	font-size: 20px;
+	color: #333;
+	font-weight: 500;
+	width: 1280px;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	display: block;
+	letter-spacing: 3px;
+	border-bottom: 4px solid #31BA6A;
+}
